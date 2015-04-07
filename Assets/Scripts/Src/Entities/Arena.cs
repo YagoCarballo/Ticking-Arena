@@ -8,6 +8,12 @@ namespace Entities
 		private List<Player> players;
 		private Timer timer;
 
+		public Arena ()
+		{
+			base.setTag ("Arena");
+			this.players = new List<Player> (4);
+		}
+
 		public void addPlayer(Player player)
 		{
 			players.Add(player);
@@ -18,7 +24,7 @@ namespace Entities
 			return players[player];
 		}
 
-		public List<Player> getAllPlayers(Player player)
+		public List<Player> getAllPlayers()
 		{
 			return players;
 		}
