@@ -1,0 +1,781 @@
+fileFormatVersion: 2
+guid: 593c863cf808a4fedaeb43f98b17f020
+timeCreated: 1428684985
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FemalePlayer-Blue-Arm-Behind
+    21300002: FemalePlayer-Blue-Arm
+    21300004: FemalePlayer-Blue-Body
+    21300006: FemalePlayer-Blue-Head
+    21300008: FemalePlayer-Blue-Leg-Behind
+    21300010: FemalePlayer-Blue-Leg
+    21300012: FemalePlayer-Gray-Arm-Behind
+    21300014: FemalePlayer-Gray-Arm
+    21300016: FemalePlayer-Gray-Body
+    21300018: FemalePlayer-Gray-Head
+    21300020: FemalePlayer-Gray-Leg-Behind
+    21300022: FemalePlayer-Gray-Leg
+    21300024: FemalePlayer-Green-Arm-Behind
+    21300026: FemalePlayer-Green-Arm
+    21300028: FemalePlayer-Green-Body
+    21300030: FemalePlayer-Green-Head
+    21300032: FemalePlayer-Green-Leg-Behind
+    21300034: FemalePlayer-Green-Leg
+    21300036: FemalePlayer-Red-Arm-Behind
+    21300038: FemalePlayer-Red-Arm
+    21300040: FemalePlayer-Red-Body
+    21300042: FemalePlayer-Red-Head
+    21300044: FemalePlayer-Red-Leg-Behind
+    21300046: FemalePlayer-Red-Leg
+    21300048: FemalePlayer-Yellow-Arm-Behind
+    21300050: FemalePlayer-Yellow-Arm
+    21300052: FemalePlayer-Yellow-Body
+    21300054: FemalePlayer-Yellow-Head
+    21300056: MalePlayer-Arm-Behind
+    21300058: MalePlayer-Arm
+    21300060: MalePlayer-Blue-Arm-Behind
+    21300062: MalePlayer-Blue-Arm
+    21300064: MalePlayer-Blue-Body
+    21300066: MalePlayer-Blue-Head
+    21300068: MalePlayer-Blue-Leg-Behind
+    21300070: MalePlayer-Blue-Leg
+    21300072: MalePlayer-Body
+    21300074: MalePlayer-Gray-Arm-Behind
+    21300076: MalePlayer-Gray-Arm
+    21300078: MalePlayer-Gray-Body
+    21300080: MalePlayer-Gray-Head
+    21300082: MalePlayer-Gray-Leg-Behind
+    21300084: MalePlayer-Gray-Leg
+    21300086: MalePlayer-Green-Arm-Behind
+    21300088: MalePlayer-Green-Arm
+    21300090: MalePlayer-Green-Body
+    21300092: MalePlayer-Green-Head
+    21300094: MalePlayer-Green-Leg-Behind
+    21300096: MalePlayer-Green-Leg
+    21300098: MalePlayer-Head
+    21300100: MalePlayer-Leg-Behind
+    21300102: MalePlayer-Leg
+    21300104: MalePlayer-Yellow-Arm-Behind
+    21300106: MalePlayer-Yellow-Arm
+    21300108: MalePlayer-Yellow-Body
+    21300110: MalePlayer-Yellow-Head
+    21300112: MalePlayer-Yellow-Leg-Behind
+    21300114: MalePlayer-Yellow-Leg
+    21300116: MalePlayer-Red-Arm-Behind
+    21300118: MalePlayer-Red-Arm
+    21300120: MalePlayer-Red-Body
+    21300122: MalePlayer-Red-Head
+    21300124: MalePlayer-Red-Leg-Behind
+    21300126: MalePlayer-Red-Leg
+    21300128: FemalePlayer-Yellow-Leg-Behind
+    21300130: FemalePlayer-Yellow-Leg
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FemalePlayer-Blue-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 416
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Blue-Arm
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 381
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Blue-Body
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 368
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Blue-Head
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 356
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Blue-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 311
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Blue-Leg
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 287
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Gray-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 402
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Gray-Arm
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 360
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Gray-Body
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 334
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Gray-Head
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 356
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Gray-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 311
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Gray-Leg
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 287
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Green-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 286
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Green-Arm
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 339
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Green-Body
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 322
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Green-Head
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 356
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Green-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 311
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Green-Leg
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 287
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Red-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 402
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Red-Arm
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 318
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Red-Body
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 322
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Red-Head
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 282
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Red-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 311
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Red-Leg
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 287
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Yellow-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 275
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Yellow-Arm
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 335
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Yellow-Body
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 322
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Yellow-Head
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 274
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Yellow-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 311
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FemalePlayer-Yellow-Leg
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 287
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 275
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Arm
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 494
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Blue-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 275
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Blue-Arm
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 476
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Blue-Body
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 285
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Blue-Head
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 430
+        width: 56
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Blue-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 263
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Blue-Leg
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 247
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Body
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 289
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Gray-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 272
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Gray-Arm
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 458
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Gray-Body
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 289
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Gray-Head
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 430
+        width: 56
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Gray-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 247
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Gray-Leg
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 258
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Green-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 275
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Green-Arm
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 494
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Green-Body
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 289
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Green-Head
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 430
+        width: 56
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Green-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 258
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Green-Leg
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 258
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Head
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 430
+        width: 56
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 258
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Leg
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 258
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Red-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 271
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Red-Arm
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 440
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Red-Body
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 300
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Red-Head
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 430
+        width: 56
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Red-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 258
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Red-Leg
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 250
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Yellow-Arm-Behind
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 258
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Yellow-Arm
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 422
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Yellow-Body
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 289
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Yellow-Head
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 348
+        width: 56
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Yellow-Leg-Behind
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 250
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MalePlayer-Yellow-Leg
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 250
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

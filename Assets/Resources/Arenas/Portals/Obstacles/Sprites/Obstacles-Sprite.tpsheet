@@ -1,0 +1,18 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: Obstacles-Sprite.png (1024 x 1024)
+# $TexturePacker:SmartUpdate:27a0d07ee4a7c748dc3a05ee83eaf21a:f5a937f3f26ead9b8629b3fadb07e785:6b9f997a23bf940a65b6261cf275acd2$
+#
+
+Obstacle-1;2;857;640;165;0.5;0.5
+Obstacle-2-cog;915;506;105;106;0.5;0.5
+Obstacle-2;2;408;620;177;0.5;0.5
+Obstacle-3;644;819;302;203;0.5;0.5
+Obstacle-4;2;587;635;268;0.5;0.5
+Obstacle-5;639;614;301;203;0.5;0.5
+Obstacle-6;639;560;274;52;0.5;0.5
+Obstacle-7;2;352;566;54;0.5;0.5

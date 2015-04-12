@@ -1,16 +1,17 @@
 namespace Entities
 {
+	[System.Serializable]
 	public class Portal : Obstacle
 	{
 		public Portal ()
 		{
-			this.setTag("Player");
+			this.Tag = "Player";
 		}
 
 		public Portal (int id) : this()
 		{
-			this.setId(id);
-			this.setName("Portal_" + id);
+			this.Id		= id;
+			this.Name	= "Portal_" + id;
 		}
 	}
 }

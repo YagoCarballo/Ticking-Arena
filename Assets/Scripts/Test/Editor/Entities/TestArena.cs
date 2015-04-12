@@ -20,7 +20,7 @@ namespace TickingArenaTests
 		{
 			arena = new Arena ();
 
-			if (arena.getTag().Equals("Arena"))
+			if (arena.Tag.Equals("Arena"))
 			{
 				Assert.Pass();
 			}

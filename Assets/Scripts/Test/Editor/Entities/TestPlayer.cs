@@ -20,7 +20,7 @@ namespace TickingArenaTests
 		{
 			player = new Player ();
 
-			if (player.getTag().Equals("Player"))
+			if (player.Tag.Equals("Player"))
 			{
 				Assert.Pass();
 			}

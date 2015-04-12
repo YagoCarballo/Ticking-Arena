@@ -1,24 +1,28 @@
 namespace Entities
 {
+	public enum ObstacleType { 
+		UNKNOWN		 = -1, 
+		WALL		 = 0, 
+		FLOOR		 = 1, 
+		CEILING		 = 2, 
+		PLATFORM	 = 3, 
+		PORTAL		 = 4
+	}
+
+	[System.Serializable]
 	public class Obstacle : Base
 	{
-		public readonly static int UNKNOWN    = -1;
-		public readonly static int WALL       = 0;
-		public readonly static int FLOOR      = 1;
-		public readonly static int CEILING    = 2;
-		public readonly static int PLATFORM   = 3;
-		public readonly static int PORTAL     = 4;
+		[UnityEngine.SerializeField]
+		private ObstacleType _type = ObstacleType.UNKNOWN;
 
-		private int type = Obstacle.UNKNOWN;
-
-		public int getType()
+		public ObstacleType getType()
 		{
-			return type;
+			return _type;
 		}
 
-		public void setType(int type)
+		public void setType(ObstacleType type)
 		{
-			this.type = type;
+			this._type = type;
 		}
 	}
 }

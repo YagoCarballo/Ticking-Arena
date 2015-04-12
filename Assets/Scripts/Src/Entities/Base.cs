@@ -1,10 +1,16 @@
 namespace Entities
 {
+	[System.Serializable]
 	public abstract class Base
 	{
-		private int id      = -1;
-		private string name = "";
-		private string tag  = "";
+		[UnityEngine.SerializeField]
+		private int _id      = -1;
+
+		[UnityEngine.SerializeField]
+		private string _name = "";
+
+		[UnityEngine.SerializeField]
+		private string _tag  = "";
 
 		public Base()
 		{
@@ -12,50 +18,38 @@ namespace Entities
 
 		public Base(int id)
 		{
-			this.id = id;
+			this._id = id;
 		}
 
 		public Base(int id, string name)
 		{
-			this.id = id;
-			this.name = name;
+			this._id = id;
+			this._name = name;
 		}
 
 		public Base(int id, string name, string tag)
 		{
-			this.id = id;
-			this.name = name;
-			this.tag = tag;
+			this._id = id;
+			this._name = name;
+			this._tag = tag;
 		}
 
-		public int getId()
+		public int Id
 		{
-			return id;
+			set { this._id = value; }
+			get { return this._id; }
 		}
 
-		public void setId(int id)
+		public string Name
 		{
-			this.id = id;
+			set { this._name = value; }
+			get { return this._name; }
 		}
 
-		public string getName()
+		public string Tag
 		{
-			return name;
+			set { this._tag = value; }
+			get { return this._tag; }
 		}
-
-		public void setName(string name)
-		{
-			this.name = name;
-		}
-
-		public string getTag()
-		{
-			return tag;
-		}
-
-		public void setTag(string tag)
-		{
-			this.tag = tag;
-		}
-}
+	}
 }

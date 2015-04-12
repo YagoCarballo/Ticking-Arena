@@ -2,7 +2,7 @@ namespace Observers
 {
 	public interface InputObserver
 	{
-		void inputMoved (bool left);
+		void inputMoved (float axis);
 		void inputJumped ();
 		void inputFired ();
 	}
