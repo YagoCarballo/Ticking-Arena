@@ -19,13 +19,21 @@ namespace Controllers
 		private Rigidbody2D		rigidBody;
 
 		// Movement Variables
-		public	float	maxSpeedX	= 5f;
+		public	float	MaxSpeedX	= 10f;
 		private	float	inputAxis	= 0f;
 		private float	velocityX;
 		private	bool	facingRight	= true;
+		private bool	disableWalk = false;
 
 		// Jump Variables
-		public	float	maxSpeedY	= 10f;
+		public	int		MaxJumps	= 2;
+		public	float	MaxSpeedY	= 10f;
+		private float	velocityY;
+		private	int		jumpCount;
+
+		// World Variables
+		[Range(-100.0f, 100.0f)]
+		public float gravityLevel = 0.0f;
 
 		public void Awake ()
 		{
@@ -61,6 +69,8 @@ namespace Controllers
 
 		public void Update ()
 		{
+			// Sets the Gravity level on the Y axis, (so the Jumps are more realistic and fast)
+			Physics.gravity = Vector3.up * gravityLevel;
 		}
 
 		public void OnEnable ()
@@ -79,35 +89,92 @@ namespace Controllers
 			}
 		}
 
-		public void OnCollisionEnter2D () {}
-		public void OnCollisionExit2D () {}
-		public void OnCollisionStay2D () {}
-
-
-		public void inputMoved(float axis)
-		{
-			inputAxis = axis;
-			this.rigidBody.velocity = new Vector2 ((axis * this.maxSpeedX), this.rigidBody.velocity.y);
-
-			if (axis < 0 && facingRight)
+		void OnCollisionEnter2D(Collision2D collision) {
+			// Reset the count of jumps if the player hit an obstacle
+			if (collision.gameObject.tag.Equals("obstacle"))
 			{
-				Flip();
+				jumpCount = 0;
+				
+				Vector3 contactPoint = collision.contacts[0].point;
+				Vector3 center = GetComponent<Collider2D>().bounds.center;
+				
+				bool right = contactPoint.x > (center.x + MaxSpeedX);
+				bool left = contactPoint.x < (center.x - MaxSpeedX);
+				bool top = contactPoint.y > (center.y - MaxSpeedY);
+				bool bottom = contactPoint.y > (center.y - MaxSpeedY);
+
+//				if (!right && !left && !top)
+//				{
+//					// Sides
+//					disableWalk = false;
+//				}
+//				else
+//				{
+//					// Top / Bottom
+//					disableWalk = true;
+//				}
+
 			}
-			else if (axis > 0 && !facingRight)
+		}
+
+		#region InputObserver implementation
+
+		public void InputDetected (float axis, bool jump, bool fire)
+		{
+			float forceX = 0;
+			float forceY = 0;
+			velocityX = GetComponent<Rigidbody2D>().velocity.x;
+			velocityY = GetComponent<Rigidbody2D>().velocity.y;
+
+			// If the Player did not exceed the Jumping limit
+			if (jumpCount < MaxJumps)
 			{
-				Flip();
+				// Sets the new Horizontal force 0
+				if(axis != 0 & !disableWalk)
+				{
+					forceX = MaxSpeedX * axis;
+				}
+				
+				// If the Player just jumped (not moved) set the Vertical force
+				if(jump)
+				{
+					forceY = MaxSpeedY;
+					jumpCount++;
+				}
+				// if the user did not jump, leave the gravity do it's job
+				else
+				{
+					forceY = GetComponent<Rigidbody2D>().velocity.y;
+				}
+			} 
+			else
+			{
+				// Reset the position if the player released the jump button
+				if(!jump)
+				{
+					forceY = GetComponent<Rigidbody2D>().velocity.y;
+					forceX = GetComponent<Rigidbody2D>().velocity.x;
+				}
+			}
+			
+			// applies the new forces to the player
+			GetComponent<Rigidbody2D>().velocity = new Vector2 (forceX, forceY);
+			
+			// Flip the character if it's looking at the wrong side
+			if (jumpCount < MaxJumps)
+			{
+				if (axis > 0 && !facingRight)
+				{
+					Flip ();
+				}
+				else if (axis < 0 && facingRight)
+				{
+					Flip ();
+				}
 			}
 		}
 
-		public void inputJumped()
-		{
-			this.rigidBody.velocity = new Vector2 (this.rigidBody.velocity.x, this.maxSpeedY);
-		}
-
-		public void inputFired()
-		{
-			Debug.Log (player.Name + " Fired");
-		}
+		#endregion
 
 		private void Flip()
 		{

@@ -45,12 +45,12 @@ namespace Game.InputDevices
 
 		override public bool isJumping()
 		{
-			return UnityEngine.Input.GetKey(keyboardMappings[this.Id].Jump);
+			return UnityEngine.Input.GetKeyDown(keyboardMappings[this.Id].Jump);
 		}
 
 		override public bool isShooting()
 		{
-			return UnityEngine.Input.GetKey(keyboardMappings[this.Id].Fire);
+			return UnityEngine.Input.GetKeyDown(keyboardMappings[this.Id].Fire);
 		}
 	}
 }

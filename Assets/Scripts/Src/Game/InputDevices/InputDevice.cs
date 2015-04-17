@@ -34,25 +34,13 @@ namespace Game.InputDevices
 
 		public void Update ()
 		{
-			if (this.isJumping())
-			{
-				foreach (InputObserver observer in observers)
-				{
-					observer.inputJumped ();
-				}
-			}
+			float axis		= this.getAxisMovement ();
+			bool jumping	= this.isJumping ();
+			bool shooting	= this.isShooting ();
 
 			foreach (InputObserver observer in observers)
 			{
-				observer.inputMoved (this.getAxisMovement ());
-			}
-
-			if (this.isShooting())
-			{
-				foreach (InputObserver observer in observers)
-				{
-					observer.inputFired ();
-				}
+				observer.InputDetected (axis, jumping, shooting);
 			}
 		}
 

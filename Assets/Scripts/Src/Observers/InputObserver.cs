@@ -2,8 +2,6 @@ namespace Observers
 {
 	public interface InputObserver
 	{
-		void inputMoved (float axis);
-		void inputJumped ();
-		void inputFired ();
+		void InputDetected (float axis, bool jump, bool fire);
 	}
 }
