@@ -19,7 +19,7 @@ namespace Controllers
 		private Rigidbody2D		rigidBody;
 
 		// Movement Variables
-		public	float	MaxSpeedX	= 10f;
+		public	float	MaxSpeedX	= 5f;
 		private	float	inputAxis	= 0f;
 		private float	velocityX;
 		private	bool	facingRight	= true;
