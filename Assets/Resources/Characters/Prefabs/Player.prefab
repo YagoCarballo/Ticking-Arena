@@ -56,10 +56,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 473132}
-  - 60: {fileID: 6035984}
   - 50: {fileID: 5050564}
   - 95: {fileID: 9559934}
-  - 114: {fileID: 11401566}
+  - 60: {fileID: 6008240}
+  - 114: {fileID: 11423708}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -220,7 +220,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
---- !u!60 &6035984
+--- !u!60 &6008240
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -233,29 +233,11 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -.17552048, y: .309836447}
-      - {x: .0443518832, y: .338297546}
-      - {x: .201626316, y: .38263604}
-      - {x: .262649, y: .149961859}
-      - {x: .26811868, y: -.0460946262}
-      - {x: .17759493, y: -.312359691}
-      - {x: .0865706131, y: -.368664026}
-      - {x: .055452466, y: -.426303148}
-      - {x: .12513198, y: -.466743886}
-      - {x: .0887191594, y: -.505080223}
-      - {x: .0714542493, y: -.623737872}
-      - {x: .0194373503, y: -.65110445}
-      - {x: .0135019273, y: -.733190298}
-      - {x: .0690885186, y: -.794484913}
-      - {x: -.0758596435, y: -.793336511}
-      - {x: -.0806940794, y: -.655810714}
-      - {x: -.134579673, y: -.583394468}
-      - {x: -.110732734, y: -.427189231}
-      - {x: -.0849555433, y: -.366025716}
-      - {x: -.13532427, y: -.301662475}
-      - {x: -.171502858, y: -.19526802}
-      - {x: -.270956874, y: .159289867}
-      - {x: -.240838528, y: .243372142}
+    - - {x: 0, y: 1}
+      - {x: .95105654, y: .309016973}
+      - {x: .587785184, y: -.809017062}
+      - {x: -.587785363, y: -.809016943}
+      - {x: -.95105648, y: .309017122}
 --- !u!95 &9559934
 Animator:
   serializedVersion: 3
@@ -273,7 +255,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11401566
+--- !u!114 &11423708
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -290,7 +272,7 @@ MonoBehaviour:
     _tag: 
     _colour: 3
     _gender: 1
-  maxSpeedX: 5
+  MaxSpeedX: 5
   MaxJumps: 2
   MaxSpeedY: 10
   gravityLevel: 0
