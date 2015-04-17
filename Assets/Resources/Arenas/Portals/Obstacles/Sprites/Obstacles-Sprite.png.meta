@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 961e269620c6e466aaa00f6b94a546b0
+timeCreated: 1428664016
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Obstacle-1
+    21300002: Obstacle-2-cog
+    21300004: Obstacle-2
+    21300006: Obstacle-3
+    21300008: Obstacle-4
+    21300010: Obstacle-5
+    21300012: Obstacle-6
+    21300014: Obstacle-7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Obstacle-1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 857
+        width: 640
+        height: 165
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Obstacle-2-cog
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 506
+        width: 105
+        height: 106
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Obstacle-2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 408
+        width: 620
+        height: 177
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Obstacle-3
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 819
+        width: 302
+        height: 203
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Obstacle-4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 587
+        width: 635
+        height: 268
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Obstacle-5
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 614
+        width: 301
+        height: 203
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Obstacle-6
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 560
+        width: 274
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Obstacle-7
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 352
+        width: 566
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

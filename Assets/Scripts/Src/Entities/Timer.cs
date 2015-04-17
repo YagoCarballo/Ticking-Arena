@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Entities
 {
+	[System.Serializable]
 	public class Timer : Base
 	{
 		// Observers
@@ -12,6 +13,7 @@ namespace Entities
 		private float endTime;
 		private float speed;
 
+		[UnityEngine.SerializeField]
 		private int currentPlayer;
 	}
 }

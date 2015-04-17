@@ -1,0 +1,12 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: RedButton-Sprite.png (128 x 128)
+# $TexturePacker:SmartUpdate:a3815701faead9a4e5cde8ffbc274c2d:17a93e1c7efb8fbdc8742e09c442fb9a:1e1cc599a00ff143daa73b05b5633c87$
+#
+
+Button-Normal;2;77;98;49;0.5;0.9183673469387755
+Button-Pressed;2;39;98;36;0.5;1.25

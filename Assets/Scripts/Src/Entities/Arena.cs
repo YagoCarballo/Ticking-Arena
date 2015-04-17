@@ -1,32 +1,37 @@
 using Observers;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Entities
 {
+	[System.Serializable]
 	public class Arena : Base
 	{
-		private List<Player> players;
-		private Timer timer;
+		[UnityEngine.SerializeField]
+		private List<Player> _players;
+
+		[UnityEngine.SerializeField]
+		private Timer _timer;
 
 		public Arena ()
 		{
-			base.setTag ("Arena");
-			this.players = new List<Player> (4);
+			base.Tag = "Arena";
+			this._players = new List<Player> (4);
 		}
 
 		public void addPlayer(Player player)
 		{
-			players.Add(player);
+			_players.Add(player);
 		}
 
 		public Player getPlayer(int player)
 		{
-			return players[player];
+			return _players[player];
 		}
 
 		public List<Player> getAllPlayers()
 		{
-			return players;
+			return _players;
 		}
 	}
 }
