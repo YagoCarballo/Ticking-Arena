@@ -141,13 +141,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 120826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b92000c5eb946f78ffc338363ce575, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ceb09f75f4894cc6bf770dab2acb3bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 90
-  active: 1
-  waitingTime: 2
-  portalCrossed: {fileID: 8300000, guid: 0b3e7c0385db346f8b9d0d7399b1386d, type: 3}
 --- !u!198 &19820826
 ParticleSystem:
   m_ObjectHideFlags: 1
