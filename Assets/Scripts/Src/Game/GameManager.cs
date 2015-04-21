@@ -22,6 +22,16 @@ namespace Game
 				return instance;
 			}
 		}
+
+		// Camera Tools
+		private readonly float targetAspectRatio = 1.776699f;
+		private readonly float targetCameraSize = 5.0f;
+
+		public void UpdateCameraSize (Camera camera)
+		{	
+			float newCameraSize = (targetAspectRatio * targetCameraSize) / camera.aspect;
+			camera.orthographicSize = newCameraSize;
+		}
 		
 		// Game Elements
 		private Arena arena;

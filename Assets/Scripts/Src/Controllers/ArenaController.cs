@@ -58,7 +58,7 @@ public class ArenaController : MonoBehaviour
 
 	void Start ()
 	{
-
+		game.UpdateCameraSize (Camera.main);
 	}
 
 	void Update ()

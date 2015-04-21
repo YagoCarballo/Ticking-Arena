@@ -17,6 +17,7 @@ namespace Controllers
 		private InputDevice		inputHandler;
 		private SpriteParser	spriteParser;
 		private Rigidbody2D		rigidBody;
+		private Animator		animator;
 
 		// Movement Variables
 		public	float	MaxSpeedX	= 5f;
@@ -40,6 +41,7 @@ namespace Controllers
 			game = GameManager.Instance;
 			this.spriteParser = new SpriteParser ("Characters/Sprites/Player-Sprite");
 			this.rigidBody = GetComponent<Rigidbody2D> ();
+			this.animator = gameObject.GetComponent<Animator> ();
 		}
 
 		public void Start () 
@@ -114,6 +116,7 @@ namespace Controllers
 //					disableWalk = true;
 //				}
 
+				animator.SetTrigger("Cancel");
 			}
 		}
 
@@ -140,6 +143,7 @@ namespace Controllers
 				{
 					forceY = MaxSpeedY;
 					jumpCount++;
+					animator.SetTrigger("Jump");
 				}
 				// if the user did not jump, leave the gravity do it's job
 				else
@@ -159,6 +163,15 @@ namespace Controllers
 			
 			// applies the new forces to the player
 			GetComponent<Rigidbody2D>().velocity = new Vector2 (forceX, forceY);
+
+			if (animator != null && !disableWalk)
+			{
+				animator.SetBool("Walk", (forceX != 0));
+			}
+			else
+			{
+				animator.SetBool("Walk", false);
+			}
 			
 			// Flip the character if it's looking at the wrong side
 			if (jumpCount < MaxJumps)
