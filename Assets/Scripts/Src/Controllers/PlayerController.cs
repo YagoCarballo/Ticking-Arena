@@ -13,23 +13,18 @@ namespace Controllers
 	public class PlayerController : MonoBehaviour, InputObserver
 	{
 		public	Player			player;
-		private GameManager		game;
 		private InputDevice		inputHandler;
 		private SpriteParser	spriteParser;
-		private Rigidbody2D		rigidBody;
 		private Animator		animator;
 
 		// Movement Variables
 		public	float	MaxSpeedX	= 5f;
-		private	float	inputAxis	= 0f;
-		private float	velocityX;
 		private	bool	facingRight	= true;
 		private bool	disableWalk = false;
 
 		// Jump Variables
 		public	int		MaxJumps	= 2;
 		public	float	MaxSpeedY	= 10f;
-		private float	velocityY;
 		private	int		jumpCount;
 
 		// World Variables
@@ -38,9 +33,7 @@ namespace Controllers
 
 		public void Awake ()
 		{
-			game = GameManager.Instance;
 			this.spriteParser = new SpriteParser ("Characters/Sprites/Player-Sprite");
-			this.rigidBody = GetComponent<Rigidbody2D> ();
 			this.animator = gameObject.GetComponent<Animator> ();
 		}
 
@@ -96,26 +89,6 @@ namespace Controllers
 			if (collision.gameObject.tag.Equals("obstacle"))
 			{
 				jumpCount = 0;
-				
-				Vector3 contactPoint = collision.contacts[0].point;
-				Vector3 center = GetComponent<Collider2D>().bounds.center;
-				
-				bool right = contactPoint.x > (center.x + MaxSpeedX);
-				bool left = contactPoint.x < (center.x - MaxSpeedX);
-				bool top = contactPoint.y > (center.y - MaxSpeedY);
-				bool bottom = contactPoint.y > (center.y - MaxSpeedY);
-
-//				if (!right && !left && !top)
-//				{
-//					// Sides
-//					disableWalk = false;
-//				}
-//				else
-//				{
-//					// Top / Bottom
-//					disableWalk = true;
-//				}
-
 				animator.SetTrigger("Cancel");
 			}
 		}
@@ -126,8 +99,8 @@ namespace Controllers
 		{
 			float forceX = 0;
 			float forceY = 0;
-			velocityX = GetComponent<Rigidbody2D>().velocity.x;
-			velocityY = GetComponent<Rigidbody2D>().velocity.y;
+			float velocityX = GetComponent<Rigidbody2D>().velocity.x;
+			float velocityY = GetComponent<Rigidbody2D>().velocity.y;
 
 			// If the Player did not exceed the Jumping limit
 			if (jumpCount < MaxJumps)
@@ -156,8 +129,8 @@ namespace Controllers
 				// Reset the position if the player released the jump button
 				if(!jump)
 				{
-					forceY = GetComponent<Rigidbody2D>().velocity.y;
-					forceX = GetComponent<Rigidbody2D>().velocity.x;
+					forceY = velocityY;
+					forceX = velocityX;
 				}
 			}
 			

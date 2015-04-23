@@ -21,6 +21,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &197890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 469814}
+  - 249: {fileID: 24965990}
+  - 61: {fileID: 6131536}
+  m_Layer: 0
+  m_Name: AtractionArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &420826
 Transform:
   m_ObjectHideFlags: 1
@@ -28,10 +45,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.25, y: 2.28999996, z: 0}
+  m_LocalPosition: {x: .129999995, y: 3.44000006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 469814}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &469814
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 420826}
   m_RootOrder: 0
 --- !u!58 &5881428
 CircleCollider2D:
@@ -46,6 +76,19 @@ CircleCollider2D:
   m_Offset: {x: -.0154290199, y: .000225305557}
   serializedVersion: 2
   m_Radius: .456504822
+--- !u!61 &6131536
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197890}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
+  m_Offset: {x: -0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
 --- !u!82 &8246344
 AudioSource:
   m_ObjectHideFlags: 1
@@ -54,8 +97,7 @@ AudioSource:
   m_GameObject: {fileID: 120826}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24348990, guid: 08ae28f8faeeb47129042aff82103368,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e116dfdf4a6054062910b16b92bd3c31, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -125,7 +167,7 @@ Animator:
   m_GameObject: {fileID: 120826}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a5511d16d54cd4df4aa720216b9dcc2a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -144,6 +186,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ceb09f75f4894cc6bf770dab2acb3bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Portal:
+    _id: -1
+    _name: 
+    _tag: Player
+    _type: -1
+    _active: 1
+    _waitingTime: 1
+  NextPortal: {fileID: 0}
 --- !u!198 &19820826
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1228,6 +1278,22 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+--- !u!249 &24965990
+AreaEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197890}
+  m_Enabled: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ForceDirection: 0
+  m_ForceMagnitude: -10
+  m_ForceVariation: 0
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_ForceTarget: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
