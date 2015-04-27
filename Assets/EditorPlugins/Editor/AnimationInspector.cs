@@ -17,6 +17,8 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
+#pragma warning disable 612, 618
+
 /**
  * Animation Inspector is used to remap existing animation curves inside an AnimClip.
  * This is useful for when you've animated a scene, but have then re-named scene objects, thus 'losing' the curve and getting
@@ -218,3 +220,5 @@ public class AnimationInspector : EditorWindow
 		return new Rect(0.0f, 0.0f, maxTime * 1.1f, maxValue * 1.1f);
 	}
 }
+
+#pragma warning restore 612, 618

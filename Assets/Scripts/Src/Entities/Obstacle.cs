@@ -15,6 +15,11 @@ namespace Entities
 		[UnityEngine.SerializeField]
 		private ObstacleType _type = ObstacleType.UNKNOWN;
 
+		public Obstacle ()
+		{
+			base.Tag = "Obstacle";
+		}
+
 		public ObstacleType getType()
 		{
 			return _type;

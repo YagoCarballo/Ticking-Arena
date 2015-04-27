@@ -861,7 +861,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d91d9f6d203a64e089134b12808e2e1a, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &788844413
+--- !u!4 &788844413 stripped
 Transform:
   m_PrefabParentObject: {fileID: 445186, guid: d91d9f6d203a64e089134b12808e2e1a, type: 2}
   m_PrefabInternal: {fileID: 788844412}
@@ -3533,9 +3533,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 1
-  m_Offset: {x: -.0337014198, y: -.125176191}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 6.15148354, y: 1.57773638}
+  m_Size: {x: 3.97333431, y: 1.57773638}
 --- !u!250 &1188834541
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -3543,6 +3543,7 @@ PointEffector2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1188834539}
   m_Enabled: 1
+  m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 256

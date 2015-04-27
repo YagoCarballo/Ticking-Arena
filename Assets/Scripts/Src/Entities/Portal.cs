@@ -7,11 +7,11 @@ namespace Entities
 		private bool	_active			= true;
 
 		[UnityEngine.SerializeField]
-		private float	_waitingTime	= 1;
+		private float	_waitingTime	= 2.0f;
 
 		public Portal ()
 		{
-			this.Tag = "Player";
+			this.Tag = "Portal";
 		}
 
 		public Portal (int id) : this()
