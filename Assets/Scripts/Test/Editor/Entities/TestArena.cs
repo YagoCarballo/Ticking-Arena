@@ -42,14 +42,6 @@ namespace TickingArenaTests
 				arena.addPlayer (player);
 				Assert.AreSame (arena.getPlayer (0), player);
 			}
-			
-			[Test]
-			[Category("Arena has a property Timer and is not null")]
-			public void TimerIsAccessible()
-			{
-				Entities.Timer timer = arena.Timer;
-				Assert.NotNull (timer);
-			}
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace Controllers
 	[RequireComponent(typeof(Rigidbody2D))]
 	[RequireComponent(typeof(PolygonCollider2D))]
 
-	public class PlayerController : MonoBehaviour, InputObserver
+	public class PlayerController : MonoBehaviour, InputObserver, TimerObserver
 	{
 		public	Player			player;
 		private InputDevice		inputHandler;
@@ -30,6 +30,9 @@ namespace Controllers
 		// World Variables
 		[Range(-100.0f, 100.0f)]
 		public float gravityLevel = 0.0f;
+
+		// Timer Variables
+		private ActivePlayerObserver timerObserver;
 
 		public void Awake ()
 		{
@@ -101,6 +104,11 @@ namespace Controllers
 			float forceY = 0;
 			float velocityX = GetComponent<Rigidbody2D>().velocity.x;
 			float velocityY = GetComponent<Rigidbody2D>().velocity.y;
+
+			if (timerObserver != null && fire)
+			{
+				timerObserver.ThrowTimer(facingRight);
+			}
 
 			// If the Player did not exceed the Jumping limit
 			if (jumpCount < MaxJumps)
@@ -204,6 +212,30 @@ namespace Controllers
 				{
 					bodyPart.GetComponent<Renderer>().sortingOrder = 1;
 				}
+			}
+		}
+
+		public void timerEnded(float time, int player)
+		{
+			if (this.player.Id == player)
+			{
+				Debug.Log("Game Over: " + this.player.Name + " Looses..");
+			}
+		}
+		
+		public void timerStarted(float time, int player)
+		{
+		}
+		
+		public void timerChangedOwner(int newPlayer, int oldPlayer, ActivePlayerObserver observer)
+		{
+			if (this.player.Id == newPlayer)
+			{
+				timerObserver = observer;
+			}
+			else
+			{
+				timerObserver = null;
 			}
 		}
 	}

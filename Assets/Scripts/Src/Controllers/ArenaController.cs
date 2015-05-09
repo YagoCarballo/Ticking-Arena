@@ -3,6 +3,7 @@ using System.Collections;
 using Entities;
 using Game;
 using Controllers;
+using controllers;
 
 public class ArenaController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ArenaController : MonoBehaviour
 	{
 		game = GameManager.Instance;
 		game.FindAvailableControllers ();
+
+		GameObject timerPrefab = (GameObject) Instantiate(Resources.Load("Items/Timer/Prefabs/Timer"));
 
 		playersObject = GameObject.Find ("Players");
 
@@ -54,6 +57,12 @@ public class ArenaController : MonoBehaviour
 			arena.addPlayer(player);
 		}
 
+		for (int i=0;i<playersObject.transform.childCount;i++)
+		{
+			timerPrefab.GetComponent<TimerController> ().timer.addTimeObserver(playersObject.transform.GetChild(i).GetComponent<PlayerController> ());
+		}
+
+		timerPrefab.transform.parent = gameObject.transform;
 	}
 
 	void Start ()

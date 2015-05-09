@@ -155,6 +155,8 @@ MonoBehaviour:
       _id: -1
       _name: 
       _tag: 
+      speed: 0
+      timeToWait: 30
       currentPlayer: 0
 --- !u!4 &19290683
 Transform:

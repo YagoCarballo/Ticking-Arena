@@ -18,7 +18,7 @@ namespace Entities
 	}
 
 	[System.Serializable]
-	public class Player : Base, TimerObserver
+	public class Player : Base
 	{
 		[UnityEngine.SerializeField]
 		private PlayerColour _colour;
@@ -153,21 +153,6 @@ namespace Entities
 		{
 			set { this._inputInfo = value; }
 			get { return this._inputInfo; }
-		}
-
-		public void timerEnded(float time, int player)
-		{
-
-		}
-
-		public void timerStarted(float time, int player)
-		{
-
-		}
-
-		public void timerChangedOwner(int newPlayer, int oldPlayer)
-		{
-
 		}
 	}
 }

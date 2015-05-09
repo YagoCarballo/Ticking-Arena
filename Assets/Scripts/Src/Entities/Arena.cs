@@ -17,7 +17,6 @@ namespace Entities
 		{
 			base.Tag = "Arena";
 			this._players = new List<Player> (4);
-			this._timer = new Timer ();
 		}
 
 		public void addPlayer(Player player)
@@ -33,11 +32,6 @@ namespace Entities
 		public List<Player> getAllPlayers()
 		{
 			return _players;
-		}
-
-		public Timer Timer {
-			get { return this._timer; }
-			set { this._timer = value; }
 		}
 	}
 }

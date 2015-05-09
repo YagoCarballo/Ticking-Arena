@@ -4,6 +4,6 @@ namespace Observers
 	{
 		void timerEnded (float time, int player);
 		void timerStarted (float time, int player);
-		void timerChangedOwner (int newPlayer, int oldPlayer);
+		void timerChangedOwner (int newPlayer, int oldPlayer, ActivePlayerObserver observer);
 	}
 }
