@@ -21,6 +21,7 @@ namespace Controllers
 		public	float	MaxSpeedX	= 5f;
 		private	bool	facingRight	= true;
 		private bool	disableWalk = false;
+		private bool	freezePlayer = false;
 
 		// Jump Variables
 		public	int		MaxJumps	= 2;
@@ -104,6 +105,9 @@ namespace Controllers
 			float forceY = 0;
 			float velocityX = GetComponent<Rigidbody2D>().velocity.x;
 			float velocityY = GetComponent<Rigidbody2D>().velocity.y;
+
+			if (freezePlayer)
+				return;
 
 			if (timerObserver != null && fire)
 			{
@@ -221,6 +225,8 @@ namespace Controllers
 			{
 				Debug.Log("Game Over: " + this.player.Name + " Looses..");
 			}
+
+			freezePlayer = true;
 		}
 		
 		public void timerStarted(float time, int player)

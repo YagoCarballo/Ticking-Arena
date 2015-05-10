@@ -5,7 +5,7 @@ using Controllers;
 
 namespace controllers
 {
-	public class TimerController : MonoBehaviour, ActivePlayerObserver
+	public class TimerController : MonoBehaviour, ActivePlayerObserver, TimerObserver
 	{
 		[UnityEngine.SerializeField]
 		public Timer timer;
@@ -23,8 +23,15 @@ namespace controllers
 		private Vector3 destination;
 		private Quaternion	lookAtRotation;
 
+		// UI
+		private ProgressBarController progressBar;
+		private Animator endMessageAnimator;
+
 		public void Awake ()
 		{
+			progressBar = GameObject.FindWithTag ("progress-bar").GetComponent<ProgressBarController> ();
+			endMessageAnimator = GameObject.Find ("BattleEndedMessage").GetComponent<Animator> ();
+
 			timerRenderer = GetComponent<Renderer> ();
 			playersObject = GameObject.Find ("Players").transform;
 			timer = new Timer (this);
@@ -35,6 +42,11 @@ namespace controllers
 			timer.CurrentPlayer = Random.Range (0, playersObject.childCount);
 			player = playersObject.GetChild(timer.CurrentPlayer).gameObject;
 
+			// Updates GUI
+			progressBar.progress = 1.0f;
+			progressBar.timeLeft = (int) timer.TimeToWait;
+			progressBar.color = player.GetComponent<PlayerController> ().player.Colour;
+
 			timer.StartTime = Time.time;
 		}
 
@@ -43,6 +55,10 @@ namespace controllers
 			// Handles the timer
 			timer.CurrentTime = (Time.time - timer.StartTime);
 			float progress = timer.CheckStatus ();
+
+			// Updates GUI
+			progressBar.progress = 1.0f - progress;
+			progressBar.timeLeft = (int) (timer.TimeToWait - timer.CurrentTime);
 
 			// timer color
 			if (progress >= 0.7f) timerRenderer.material.color = new Color(0.89f, 0.0f, 0.10f);
@@ -106,10 +122,15 @@ namespace controllers
 			{
 				transform.position = new Vector3(
 					player.transform.position.x,
-					player.transform.position.y + 0.5f,
+					player.transform.position.y + 0.55f,
 					player.transform.position.z - 1.0f
 					);
 			}
+		}
+
+		public void OnEnable ()
+		{
+			timer.addTimeObserver (this);
 		}
 
 		public void OnDisable ()
@@ -127,6 +148,11 @@ namespace controllers
 					ready = true;
 					goingBack = false;
 					player = playersObject.GetChild(playerController.player.Id).gameObject;
+
+					// Updates GUI
+					progressBar.progress = 1.0f;
+					progressBar.timeLeft = (int) timer.TimeToWait;
+					progressBar.color = player.GetComponent<PlayerController> ().player.Colour;
 
 					timer.CurrentPlayer = playerController.player.Id;
 					timer.StartTime = Time.time;
@@ -147,5 +173,22 @@ namespace controllers
 			
 			ready = false;
 		}
+
+		#region TimerObserver implementation
+
+		public void timerEnded (float time, int player)
+		{
+			endMessageAnimator.SetTrigger ("End");
+		}
+
+		public void timerStarted (float time, int player)
+		{
+		}
+
+		public void timerChangedOwner (int newPlayer, int oldPlayer, ActivePlayerObserver observer)
+		{
+		}
+
+		#endregion
 	}
 }
