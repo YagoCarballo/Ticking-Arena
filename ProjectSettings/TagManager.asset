@@ -8,6 +8,7 @@ TagManager:
   - portal
   - timer
   - progress-bar
+  - stand
   layers:
   - Default
   - TransparentFX

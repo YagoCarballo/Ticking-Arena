@@ -31,6 +31,7 @@ namespace Controllers
 		// World Variables
 		[Range(-100.0f, 100.0f)]
 		public float gravityLevel = 0.0f;
+		public bool selectorMode = false;
 
 		// Timer Variables
 		private ActivePlayerObserver timerObserver;
@@ -90,7 +91,7 @@ namespace Controllers
 
 		void OnCollisionEnter2D(Collision2D collision) {
 			// Reset the count of jumps if the player hit an obstacle
-			if (collision.gameObject.tag.Equals("obstacle"))
+			if (collision.gameObject.tag.Equals("obstacle") || collision.gameObject.tag.Equals("Player") || collision.gameObject.tag.Equals("stand"))
 			{
 				jumpCount = 0;
 				animator.SetTrigger("Cancel");
@@ -112,6 +113,12 @@ namespace Controllers
 			if (timerObserver != null && fire)
 			{
 				timerObserver.ThrowTimer(facingRight);
+			}
+			else if (selectorMode && fire)
+			{
+				if (player.Gender == PlayerGender.Male) player.Gender = PlayerGender.Female;
+				else if (player.Gender == PlayerGender.Female) player.Gender = PlayerGender.Male;
+				this.ReloadSprites();
 			}
 
 			// If the Player did not exceed the Jumping limit

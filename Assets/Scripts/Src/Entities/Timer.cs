@@ -19,7 +19,7 @@ namespace Entities
 		private float speed = 5f;
 
 		[UnityEngine.SerializeField]
-		private float timeToWait = 30f;
+		private float timeToWait = 20f;
 
 		[UnityEngine.SerializeField]
 		private int currentPlayer = -1;

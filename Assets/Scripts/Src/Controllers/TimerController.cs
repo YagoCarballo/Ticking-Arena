@@ -52,6 +52,11 @@ namespace controllers
 
 		public void Update ()
 		{
+			if (timer.Ended && Input.GetKeyDown(KeyCode.Space))
+			{
+				Application.LoadLevel("CharacterSelectorController");
+			}
+
 			// Handles the timer
 			timer.CurrentTime = (Time.time - timer.StartTime);
 			float progress = timer.CheckStatus ();

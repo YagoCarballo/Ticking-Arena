@@ -35,6 +35,7 @@ namespace Game
 		
 		// Game Elements
 		private Arena arena;
+		private Player[] activePlayers;
 		private List<InputInfo> inputDevices = new List<InputInfo> (4);
 
 		// Input Handlers
@@ -64,6 +65,12 @@ namespace Game
 		public InputInfo GetInputInfo (int pos)
 		{
 			return inputDevices[pos];
+		}
+
+		public Player[] ActivePlayers
+		{
+			get { return activePlayers; }
+			set { activePlayers = value; }
 		}
 
 	}
