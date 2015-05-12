@@ -20,7 +20,7 @@ public class ArenaController : MonoBehaviour
 
 		playersObject = GameObject.Find ("Players");
 
-		if (game.ActivePlayers.Length >= 2)
+		if (game.ActivePlayers != null && game.ActivePlayers[0] != null)
 		{
 			foreach (Player player in game.ActivePlayers) {
 				GameObject prefab = (GameObject)Instantiate (Resources.Load ("Characters/Prefabs/Player"));
@@ -35,9 +35,9 @@ public class ArenaController : MonoBehaviour
 		}
 		else
 		{
+			// Debug Mode (Only when entering into the scene directly)
 			for (int i=0;i<4;i++)
 			{
-				// TODO: Get the Players list from the GameManager
 				Player player	= new Player();
 				player.Id		= i;
 				player.Name		= "Player_" + i;

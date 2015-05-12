@@ -91,7 +91,7 @@ MonoBehaviour:
     _name: Timer
     _tag: Timer
     speed: 0
-    timeToWait: 10
+    timeToWait: 15
     currentPlayer: 0
   player: {fileID: 0}
   ready: 1

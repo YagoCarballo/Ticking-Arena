@@ -84,7 +84,7 @@ public class CharacterSelectorController : MonoBehaviour
 
 		if (game.ActivePlayers.Length >= 2)
 		{
-			Application.LoadLevel ("Arena");
+			Application.LoadLevel ("PortalsArena");
 		}
 	}
 }

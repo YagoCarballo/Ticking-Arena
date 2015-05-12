@@ -54,7 +54,7 @@ namespace controllers
 		{
 			if (timer.Ended && Input.GetKeyDown(KeyCode.Space))
 			{
-				Application.LoadLevel("CharacterSelectorController");
+				Application.LoadLevel("CharacterSelector");
 			}
 
 			// Handles the timer

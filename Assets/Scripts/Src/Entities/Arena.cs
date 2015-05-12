@@ -10,9 +10,6 @@ namespace Entities
 		[UnityEngine.SerializeField]
 		private List<Player> _players;
 
-		[UnityEngine.SerializeField]
-		private Timer _timer;
-
 		public Arena ()
 		{
 			base.Tag = "Arena";

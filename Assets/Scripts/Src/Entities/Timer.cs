@@ -14,12 +14,10 @@ namespace Entities
 		private float currentTime;
 		private float progress;
 		private bool  ended;
+		private float timeToWait = 5f;
 
 		[UnityEngine.SerializeField]
 		private float speed = 5f;
-
-		[UnityEngine.SerializeField]
-		private float timeToWait = 20f;
 
 		[UnityEngine.SerializeField]
 		private int currentPlayer = -1;
@@ -36,7 +34,7 @@ namespace Entities
 		{
 			if (!this.ended)
 			{
-				if ((this.CurrentTime - this.StartTime) >= this.TimeToWait)
+				if (this.CurrentTime >= this.TimeToWait)
 				{
 					this.ended = true;
 

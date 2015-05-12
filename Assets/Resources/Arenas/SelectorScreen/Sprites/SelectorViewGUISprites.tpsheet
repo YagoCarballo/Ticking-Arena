@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: SelectorViewGUISprites.png (2048 x 512)
+# $TexturePacker:SmartUpdate:5d09a0d8ca71933ccfb60535ce237e18:5af98a9702ca0877bb063bf58fdd04d0:9f75ef1e29fe216d7c64798f790e2d48$
+#
+
+BlueStand;2;14;280;180;0.5;0.5
+GreenStand;27;330;280;180;0.5;0.5
+MiddleArrow;27;260;1188;68;0.5;0.5
+PointingArrow;2;196;23;314;0.45652173913043476;0.5
+RedStand;309;330;280;180;0.5;0.5
+YellowStand;591;330;280;180;0.5;0.5
