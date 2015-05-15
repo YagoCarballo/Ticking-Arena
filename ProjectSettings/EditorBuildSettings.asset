@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelector.unity
   - enabled: 1
     path: Assets/Scenes/PortalsArena.unity
+  - enabled: 1
+    path: Assets/Scenes/EndOfBattleMenu.unity

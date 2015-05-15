@@ -21,7 +21,7 @@ namespace Controllers
 		public	float	MaxSpeedX	= 5f;
 		private	bool	facingRight	= true;
 		private bool	disableWalk = false;
-		private bool	freezePlayer = false;
+		public  bool	FreezePlayer = false;
 
 		// Jump Variables
 		public	int		MaxJumps	= 2;
@@ -58,7 +58,11 @@ namespace Controllers
 				{
 					this.inputHandler = gameObject.AddComponent<OuyaInputDevice> ();
 				}
-				
+				else
+				{
+					this.inputHandler = gameObject.AddComponent<InputDisabledDevice> ();
+				}
+
 				this.inputHandler.Id = player.InputInfo.Id;
 				this.inputHandler.AddObserver (this);
 			}
@@ -107,7 +111,7 @@ namespace Controllers
 			float velocityX = GetComponent<Rigidbody2D>().velocity.x;
 			float velocityY = GetComponent<Rigidbody2D>().velocity.y;
 
-			if (freezePlayer)
+			if (FreezePlayer)
 				return;
 
 			if (timerObserver != null && fire)
@@ -232,8 +236,6 @@ namespace Controllers
 			{
 				Debug.Log("Game Over: " + this.player.Name + " Looses..");
 			}
-
-			freezePlayer = true;
 		}
 		
 		public void timerStarted(float time, int player)

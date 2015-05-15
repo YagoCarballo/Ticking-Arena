@@ -14,7 +14,10 @@ namespace Entities
 		private float currentTime;
 		private float progress;
 		private bool  ended;
-		private float timeToWait = 5f;
+		private float timeToWait		= 30f;
+		private int	  numberOfChanges	= 0;
+		private float maxChanges		= 6f;
+		private float maxTime			= 30f;
 
 		[UnityEngine.SerializeField]
 		private float speed = 5f;
@@ -56,6 +59,7 @@ namespace Entities
 				this.currentTime	= 0.0f;
 				this.progress		= 0.0f;
 				this.ended			= false;
+				this.TimeToWait		= this.maxTime * ((this.maxChanges - this.numberOfChanges) / this.maxChanges);
 
 				foreach (TimerObserver observer in this.timerObservers)
 				{
@@ -82,6 +86,7 @@ namespace Entities
 
 				if (oldPlayer != this.currentPlayer)
 				{
+					this.numberOfChanges++;
 					foreach (TimerObserver observer in this.timerObservers)
 					{
 						observer.timerChangedOwner(this.currentPlayer, oldPlayer, activePlayerObserver);
@@ -103,13 +108,27 @@ namespace Entities
 		public float TimeToWait
 		{
 			get { return this.timeToWait; }
-			set { this.timeToWait = value; }
+			set {
+				if (value > 4.0f)
+				{
+					this.timeToWait = value;
+				}
+				else
+				{
+					this.timeToWait = 4.0f; 
+				}
+			}
 		}
 
 		public float Speed
 		{
 			get { return this.speed; }
 			set { this.speed = value; }
+		}
+
+		public int NumberOfChanges
+		{
+			get { return this.numberOfChanges; }
 		}
 
 		public List<TimerObserver> TimerObservers

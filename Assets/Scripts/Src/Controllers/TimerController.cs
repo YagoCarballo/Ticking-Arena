@@ -2,11 +2,15 @@ using Entities;
 using UnityEngine;
 using Observers;
 using Controllers;
+using System.Collections.Generic;
+using Game;
 
 namespace controllers
 {
 	public class TimerController : MonoBehaviour, ActivePlayerObserver, TimerObserver
 	{
+		private GameManager game;
+
 		[UnityEngine.SerializeField]
 		public Timer timer;
 
@@ -25,12 +29,11 @@ namespace controllers
 
 		// UI
 		private ProgressBarController progressBar;
-		private Animator endMessageAnimator;
 
 		public void Awake ()
 		{
+			game = GameManager.Instance;
 			progressBar = GameObject.FindWithTag ("progress-bar").GetComponent<ProgressBarController> ();
-			endMessageAnimator = GameObject.Find ("BattleEndedMessage").GetComponent<Animator> ();
 
 			timerRenderer = GetComponent<Renderer> ();
 			playersObject = GameObject.Find ("Players").transform;
@@ -39,7 +42,7 @@ namespace controllers
 
 		public void Start ()
 		{
-			timer.CurrentPlayer = Random.Range (0, playersObject.childCount);
+			timer.CurrentPlayer = SelectRandomPlayerInField ();
 			player = playersObject.GetChild(timer.CurrentPlayer).gameObject;
 
 			// Updates GUI
@@ -52,11 +55,6 @@ namespace controllers
 
 		public void Update ()
 		{
-			if (timer.Ended && Input.GetKeyDown(KeyCode.Space))
-			{
-				Application.LoadLevel("CharacterSelector");
-			}
-
 			// Handles the timer
 			timer.CurrentTime = (Time.time - timer.StartTime);
 			float progress = timer.CheckStatus ();
@@ -183,7 +181,6 @@ namespace controllers
 
 		public void timerEnded (float time, int player)
 		{
-			endMessageAnimator.SetTrigger ("End");
 		}
 
 		public void timerStarted (float time, int player)
@@ -195,5 +192,21 @@ namespace controllers
 		}
 
 		#endregion
+
+		public int SelectRandomPlayerInField ()
+		{
+			List<Player> playersOnField = new List<Player> ();
+			foreach (Player player in game.ActivePlayers)
+			{
+				if (player.LastPosition == 0)
+				{
+					playersOnField.Add(player);
+				}
+			}
+
+			int randomPos = Random.Range (0, (playersOnField.Count - 1));
+
+			return playersOnField[randomPos].Id;
+		}
 	}
 }

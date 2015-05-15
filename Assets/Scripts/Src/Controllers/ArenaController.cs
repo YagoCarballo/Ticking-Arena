@@ -4,21 +4,26 @@ using Entities;
 using Game;
 using Controllers;
 using controllers;
+using Observers;
 
-public class ArenaController : MonoBehaviour
+public class ArenaController : MonoBehaviour, TimerObserver
 {
 	private GameManager game;
 	public Arena arena;
 	private GameObject playersObject;
+	private TimerController timer;
+	private int positions = 4;
+	private Animator endMessageAnimator;
 
 	void Awake ()
 	{
 		game = GameManager.Instance;
-		game.FindAvailableControllers ();
 
 		GameObject timerPrefab = (GameObject) Instantiate(Resources.Load("Items/Timer/Prefabs/Timer"));
+		timer = timerPrefab.GetComponent<TimerController> ();
 
 		playersObject = GameObject.Find ("Players");
+		endMessageAnimator = GameObject.Find ("BattleEndedMessage").GetComponent<Animator> ();
 
 		if (game.ActivePlayers != null && game.ActivePlayers[0] != null)
 		{
@@ -35,6 +40,8 @@ public class ArenaController : MonoBehaviour
 		}
 		else
 		{
+			game.FindAvailableControllers ();
+
 			// Debug Mode (Only when entering into the scene directly)
 			for (int i=0;i<4;i++)
 			{
@@ -75,10 +82,12 @@ public class ArenaController : MonoBehaviour
 
 		for (int i=0;i<playersObject.transform.childCount;i++)
 		{
-			timerPrefab.GetComponent<TimerController> ().timer.addTimeObserver(playersObject.transform.GetChild(i).GetComponent<PlayerController> ());
+			timer.timer.addTimeObserver(playersObject.transform.GetChild(i).GetComponent<PlayerController> ());
 		}
 
+		timer.timer.addTimeObserver (this);
 		timerPrefab.transform.parent = gameObject.transform;
+		positions = arena.getAllPlayers ().Count;
 	}
 
 	void Start ()
@@ -90,4 +99,40 @@ public class ArenaController : MonoBehaviour
 	{
 
 	}
+
+	#region TimerObserver implementation
+
+	public void timerEnded (float time, int playerId)
+	{
+		arena.getPlayer (playerId).LastPosition = positions;
+		game.ActivePlayers [playerId] = arena.getPlayer (playerId);
+		playersObject.transform.GetChild (playerId).gameObject.SetActive (false);
+		playersObject.transform.GetChild (playerId).GetComponent<PlayerController> ().FreezePlayer = true;
+		positions--;
+
+		if (positions == 1)
+		{
+			endMessageAnimator.SetTrigger ("End");
+
+			foreach (Player player in game.ActivePlayers)
+			{
+				if (player.LastPosition == 0)
+				{
+					player.LastPosition = positions;
+					game.ActivePlayers [player.Id] = player;
+					Application.LoadLevel("EndOfBattleMenu");
+					return;
+				}
+			}
+		}
+		else
+		{
+			timer.Start();
+		}
+	}
+
+	public void timerStarted (float time, int player) {}
+	public void timerChangedOwner (int newPlayer, int oldPlayer, ActivePlayerObserver observer) {}
+
+	#endregion
 }
