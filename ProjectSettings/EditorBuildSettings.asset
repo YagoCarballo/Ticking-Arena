@@ -11,3 +11,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PortalsArena.unity
   - enabled: 1
     path: Assets/Scenes/EndOfBattleMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/BouncyCastleArena.unity
+  - enabled: 1
+    path: Assets/Scenes/ArenaSelector.unity

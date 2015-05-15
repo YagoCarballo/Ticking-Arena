@@ -41,6 +41,7 @@ public class ArenaController : MonoBehaviour, TimerObserver
 		else
 		{
 			game.FindAvailableControllers ();
+			game.ActivePlayers = new Player[4];
 
 			// Debug Mode (Only when entering into the scene directly)
 			for (int i=0;i<4;i++)
@@ -77,6 +78,7 @@ public class ArenaController : MonoBehaviour, TimerObserver
 
 				prefab.transform.parent = playersObject.transform;
 				arena.addPlayer(player);
+				game.ActivePlayers[i] = player;
 			}
 		}
 
