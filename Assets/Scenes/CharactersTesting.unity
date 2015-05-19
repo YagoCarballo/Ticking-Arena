@@ -87,6 +87,63 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &138531098
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 469294, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469294, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.75999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 469294, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469294, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469294, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469294, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469294, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469294, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436540, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: TimerGoodSprite
+      value: 
+      objectReference: {fileID: 21300002, guid: f7bea28363e184fd0bfc4f429b56df5a,
+        type: 3}
+    - target: {fileID: 11436540, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: TimerWarningSprite
+      value: 
+      objectReference: {fileID: 21300004, guid: f7bea28363e184fd0bfc4f429b56df5a,
+        type: 3}
+    - target: {fileID: 11436540, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+      propertyPath: TimerBadSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f7bea28363e184fd0bfc4f429b56df5a,
+        type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2dd6382d53ab24e64b1668b723912d85, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &812956799
 Prefab:
   m_ObjectHideFlags: 0

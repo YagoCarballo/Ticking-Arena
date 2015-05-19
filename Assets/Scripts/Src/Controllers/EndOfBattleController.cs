@@ -12,10 +12,10 @@ public class EndOfBattleController : MonoBehaviour
 	private GameObject playersObject;
 	private GameObject standsObject;
 
-	public Sprite RedStandSprite;
-	public Sprite GreenStandSprite;
-	public Sprite BlueStandSprite;
-	public Sprite YellowStandSprite;
+	public Material RedStandMaterial;
+	public Material GreenStandMaterial;
+	public Material BlueStandMaterial;
+	public Material YellowStandMaterial;
 
 	void Awake ()
 	{
@@ -39,7 +39,7 @@ public class EndOfBattleController : MonoBehaviour
 		else
 		{
 			// Debug Mode (Only when entering into the scene directly)
-			for (int i=0;i<2;i++)
+			for (int i=0;i<4;i++)
 			{
 				Player player	= new Player();
 				player.Id		= i;
@@ -68,7 +68,7 @@ public class EndOfBattleController : MonoBehaviour
 				
 				GameObject prefab = (GameObject) Instantiate(Resources.Load("Characters/Prefabs/Player"));
 				prefab.name = player.Name;
-				prefab.transform.localPosition = new Vector2(( i * 3 ) - 4.5f, -2);
+				prefab.transform.localPosition = new Vector2(( i * 3 ) - 4.5f, 3);
 
 				prefab.GetComponent<PlayerController> ().player = player;
 
@@ -89,7 +89,7 @@ public class EndOfBattleController : MonoBehaviour
 			if (i < amountOfPlayers)
 			{
 				Player player = arena.getPlayer(i);
-				standsObject.transform.GetChild (i).GetComponent<SpriteRenderer>().sprite = getStandSprite(player.Colour);
+				standsObject.transform.GetChild (i).GetComponent<Renderer>().material = getStandMaterial(player.Colour);
 				standsObject.transform.GetChild (i).GetComponent<Animator>().SetInteger("Position", player.LastPosition);
 			}
 			else
@@ -99,18 +99,18 @@ public class EndOfBattleController : MonoBehaviour
 		}
 	}
 
-	private Sprite getStandSprite (PlayerColour color)
+	private Material getStandMaterial (PlayerColour color)
 	{
 		switch (color)
 		{
 		case PlayerColour.Red:
-			return RedStandSprite;
+			return RedStandMaterial;
 		case PlayerColour.Green:
-			return GreenStandSprite;
+			return GreenStandMaterial;
 		case PlayerColour.Yellow:
-			return YellowStandSprite;
+			return YellowStandMaterial;
 		default:
-			return BlueStandSprite;
+			return BlueStandMaterial;
 		}
 	}
 

@@ -15,6 +15,6 @@ public class ArenaSelectorController : MonoBehaviour
 
 	public void LoadNeverEndingArena ()
 	{
-		Application.LoadLevel ("PortalsArena");
+		Application.LoadLevel ("NeverEndingArena");
 	}
 }

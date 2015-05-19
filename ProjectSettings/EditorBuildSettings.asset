@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/BouncyCastleArena.unity
   - enabled: 1
     path: Assets/Scenes/ArenaSelector.unity
+  - enabled: 1
+    path: Assets/Scenes/NeverEndingArena.unity

@@ -1,0 +1,17 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: NeverEndingObstaclesSprites.png (1024 x 2048)
+# $TexturePacker:SmartUpdate:6d210c7e3909f30f98f2f6c7239ec273:a53a6c7f3249ccaff2f2f66ab878a001:bbfab8696c7efa4c153e41737c318fdc$
+#
+
+BottomTree;2;720;636;502;0.5;0.5
+Leaf;872;1978;68;68;0.5;0.5
+Log;772;1698;98;348;0.5;0.5
+Rock;2;1224;696;310;0.5;0.5
+SidesTree;2;395;570;323;0.5017543859649123;0.3777089783281734
+Swing;942;1742;66;304;0.5;0.5032894736842105
+TopTree;2;1536;768;510;0.5;0.5
