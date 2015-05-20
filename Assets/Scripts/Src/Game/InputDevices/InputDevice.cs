@@ -27,20 +27,47 @@ namespace Game.InputDevices
 	{
 		private List<InputObserver> observers = new List<InputObserver> (1);
 		public int Id { set; get; }
+		public bool Active { set; get; }
 
 		public abstract float getAxisMovement ();
 		public abstract bool isJumping ();
 		public abstract bool isShooting ();
+		public abstract bool isPausing ();
+		public abstract bool isStillConnected ();
 
 		public void Update ()
 		{
-			float axis		= this.getAxisMovement ();
-			bool jumping	= this.isJumping ();
-			bool shooting	= this.isShooting ();
-
-			foreach (InputObserver observer in observers)
+			if (isStillConnected ())
 			{
-				observer.InputDetected (axis, jumping, shooting);
+				if (!Active)
+				{
+					Active = true;
+					foreach (InputObserver observer in observers)
+					{
+						observer.InputConnectionUpdated (Active);
+					}
+				}
+
+				float axis		= this.getAxisMovement ();
+				bool jumping	= this.isJumping ();
+				bool shooting	= this.isShooting ();
+				bool pausing	= this.isPausing ();
+				
+				foreach (InputObserver observer in observers)
+				{
+					observer.InputDetected (axis, jumping, shooting, pausing);
+				}
+			}
+			else
+			{
+				if (Active)
+				{
+					Active = false;
+					foreach (InputObserver observer in observers)
+					{
+						observer.InputConnectionUpdated (Active);
+					}
+				}
 			}
 		}
 

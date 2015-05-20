@@ -14,10 +14,27 @@ public class CharacterSelectorController : MonoBehaviour
 	void Awake ()
 	{
 		game = GameManager.Instance;
-		game.FindAvailableControllers ();
-
 		playersObject = GameObject.Find ("Players");
+	}
 
+	IEnumerator Start()
+	{
+		#if UNITY_ANDROID && !UNITY_EDITOR
+		while (!OuyaSDK.isIAPInitComplete())
+		{
+			yield return null;
+		}
+		#endif
+
+		LoadPlayers ();
+		game.UpdateCameraSize (Camera.main);
+		yield return true;
+	}
+
+	private void LoadPlayers ()
+	{
+		game.FindAvailableControllers ();
+		
 		for (int i=0; i<4; i++) {
 			Player player = new Player ();
 			player.Id = i;
@@ -42,7 +59,7 @@ public class CharacterSelectorController : MonoBehaviour
 				player.Gender = PlayerGender.Female;
 				break;
 			}
-
+			
 			GameObject prefab = (GameObject)Instantiate (Resources.Load ("Characters/Prefabs/Player"));
 			prefab.name = player.Name;
 			prefab.transform.localPosition = new Vector2 ((i * -1) + 1.5f, 2);
@@ -54,20 +71,7 @@ public class CharacterSelectorController : MonoBehaviour
 			arena.addPlayer (player);
 		}
 	}
-
-	void Start ()
-	{
-		game.UpdateCameraSize (Camera.main);
-	}
-
-	void Update ()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			StartGame();
-		}
-	}
-
+	
 	public void StartGame ()
 	{
 		List<Player> players = new List<Player> (4);

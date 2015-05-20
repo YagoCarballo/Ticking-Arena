@@ -32,6 +32,7 @@ namespace Controllers
 		[Range(-100.0f, 100.0f)]
 		public float gravityLevel = 0.0f;
 		public bool selectorMode = false;
+		public bool endBattleMode = false;
 
 		// Timer Variables
 		private ActivePlayerObserver timerObserver;
@@ -104,7 +105,7 @@ namespace Controllers
 
 		#region InputObserver implementation
 
-		public void InputDetected (float axis, bool jump, bool fire)
+		public void InputDetected (float axis, bool jump, bool fire, bool pausing)
 		{
 			float forceX = 0;
 			float forceY = 0;
@@ -123,6 +124,14 @@ namespace Controllers
 				if (player.Gender == PlayerGender.Male) player.Gender = PlayerGender.Female;
 				else if (player.Gender == PlayerGender.Female) player.Gender = PlayerGender.Male;
 				this.ReloadSprites();
+			}
+			else if (selectorMode && pausing)
+			{
+				GameObject.Find("CharacterSelector").BroadcastMessage("StartGame");
+			}
+			else if (endBattleMode && pausing)
+			{
+				GameObject.Find("EndOfBattle").BroadcastMessage("NextScreen");
 			}
 
 			// If the Player did not exceed the Jumping limit
@@ -181,6 +190,11 @@ namespace Controllers
 					Flip ();
 				}
 			}
+		}
+
+		public void InputConnectionUpdated (bool connected)
+		{
+			this.player.InputInfo.Available = connected;
 		}
 
 		#endregion

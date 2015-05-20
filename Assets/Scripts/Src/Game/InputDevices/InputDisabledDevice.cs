@@ -16,5 +16,15 @@
 		{
 			return false;
 		}
+
+		override public bool isPausing()
+		{
+			return false;
+		}
+
+		override public bool isStillConnected ()
+		{
+			return true;
+		}
 	}
 }

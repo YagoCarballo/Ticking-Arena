@@ -31,6 +31,7 @@ public class EndOfBattleController : MonoBehaviour
 				prefab.transform.localPosition = new Vector2(( player.Id * 3 ) - 4.5f, -2);
 
 				prefab.GetComponent<PlayerController> ().player = player;
+				prefab.GetComponent<PlayerController> ().endBattleMode = true;
 				
 				prefab.transform.parent = playersObject.transform;
 				arena.addPlayer (player);
@@ -114,11 +115,8 @@ public class EndOfBattleController : MonoBehaviour
 		}
 	}
 
-	void Update ()
+	void NextScreen ()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			Application.LoadLevel("CharacterSelector");
-		}
+		Application.LoadLevel("CharacterSelector");
 	}
 }

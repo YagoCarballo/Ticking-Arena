@@ -41,10 +41,19 @@ namespace Game
 		// Input Handlers
 		public void FindAvailableControllers ()
 		{
-			// Keyboard
-			for (int pos=0; pos < 4; pos++)
+			// Ouya Controllers
+			foreach (int id in OuyaInputDevice.GetConnectedControllers())
 			{
-				this.inputDevices.Add (new InputInfo ( pos, typeof(KeyboardInputDevice), true ));
+				this.inputDevices.Add (new InputInfo ( id, typeof(OuyaInputDevice), true ));
+			}
+
+			if (this.inputDevices.Count == 0)
+			{
+				// Keyboard
+				for (int pos=0; pos < 4; pos++)
+				{
+					this.inputDevices.Add (new InputInfo ( pos, typeof(KeyboardInputDevice), true ));
+				}
 			}
 		}
 
