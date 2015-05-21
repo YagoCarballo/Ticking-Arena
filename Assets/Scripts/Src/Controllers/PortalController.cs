@@ -4,13 +4,18 @@ using System.Collections;
 
 namespace Controllers
 {
+	[RequireComponent(typeof(AudioSource))]
 	public class PortalController : MonoBehaviour
 	{
+		private AudioSource audioSource;
+		public AudioClip portalCrossed;
+
 		public Portal Portal;
 		public Transform NextPortal;
 
 		public void Awake ()
 		{
+			audioSource = GetComponent<AudioSource> ();
 		}
 
 		public void Start () {}
@@ -30,6 +35,8 @@ namespace Controllers
 		{
 			if (Portal.Active && !collider.gameObject.tag.Equals("obstacle"))
 			{
+				audioSource.PlayOneShot(portalCrossed);
+
 				Portal.Active = false;
 				NextPortal.GetComponent<PortalController>().Portal.Active = false;
 				collider.gameObject.transform.position = NextPortal.position;

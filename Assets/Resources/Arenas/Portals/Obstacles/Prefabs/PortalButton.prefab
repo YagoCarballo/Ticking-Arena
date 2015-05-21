@@ -12,6 +12,7 @@ GameObject:
   - 95: {fileID: 9545186}
   - 61: {fileID: 6185684}
   - 114: {fileID: 11408436}
+  - 82: {fileID: 8272058}
   m_Layer: 0
   m_Name: PortalButton
   m_TagString: Untagged
@@ -86,6 +87,76 @@ BoxCollider2D:
   m_Offset: {x: .00649034977, y: -.209867716}
   serializedVersion: 2
   m_Size: {x: .324478328, y: .480264485}
+--- !u!82 &8272058
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145186}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24325540, guid: 3813550dbc0534f48b00e75c3a2ea79f,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 9602d07cc0ecf4e8086457f2f8b9ba21, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9545186
 Animator:
   serializedVersion: 3
@@ -114,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb029584454b4d7a9e80af0a137cb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portalsChanging: {fileID: 8300000, guid: 9602d07cc0ecf4e8086457f2f8b9ba21, type: 3}
 --- !u!212 &21245186
 SpriteRenderer:
   m_ObjectHideFlags: 1

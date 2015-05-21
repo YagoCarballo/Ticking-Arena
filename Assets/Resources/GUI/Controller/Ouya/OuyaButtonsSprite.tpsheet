@@ -1,0 +1,17 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: OuyaButtonsSprite.png (256 x 256)
+# $TexturePacker:SmartUpdate:69f2ac102a1b69784d84ea63a42fcbf1:ac8bf7b0547832f123221d1b3cccfe05:c5e97c3f5c9476a074db6d320e1d1cfe$
+#
+
+Ouya_Button_A;67;73;75;75;0.5;0.5
+Ouya_Button_Menu;2;20;50;41;0.5;0.5
+Ouya_Button_O;107;179;75;75;0.5;0.5
+Ouya_Button_U;144;102;75;75;0.5;0.5
+Ouya_Button_Y;144;25;75;75;0.5;0.5
+Ouya_D_Pad;2;150;103;104;0.5;0.5
+Ouya_Joistick;2;63;63;85;0.5;0.5

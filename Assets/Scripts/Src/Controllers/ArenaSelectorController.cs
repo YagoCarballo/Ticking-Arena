@@ -1,20 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Game;
 
 public class ArenaSelectorController : MonoBehaviour
 {
 	public void LoadPortalsArena ()
 	{
-		Application.LoadLevel ("PortalsArena");
+		GameManager.Instance.LastPlayedArena = "PortalsArena";
+		Application.LoadLevel (GameManager.Instance.LastPlayedArena);
 	}
 
 	public void LoadBouncyCastleArena ()
 	{
-		Application.LoadLevel ("BouncyCastleArena");
+		GameManager.Instance.LastPlayedArena = "BouncyCastleArena";
+		Application.LoadLevel (GameManager.Instance.LastPlayedArena);
 	}
 
 	public void LoadNeverEndingArena ()
 	{
-		Application.LoadLevel ("NeverEndingArena");
+		GameManager.Instance.LastPlayedArena = "NeverEndingArena";
+		Application.LoadLevel (GameManager.Instance.LastPlayedArena);
 	}
 }

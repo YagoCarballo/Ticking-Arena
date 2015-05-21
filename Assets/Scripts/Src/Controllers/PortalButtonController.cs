@@ -5,9 +5,12 @@ using System.Collections;
 namespace Controllers
 {	
 	[RequireComponent(typeof(Animator))]
+	[RequireComponent(typeof(AudioSource))]
 	public class PortalButtonController : MonoBehaviour
 	{
 		private Animator animator;
+		private AudioSource audioSource;
+		public AudioClip portalsChanging;
 
 		private GameObject[] portals;
 		private int[] openedPortals = { -1, -1 };
@@ -15,6 +18,7 @@ namespace Controllers
 		public void Awake ()
 		{
 			animator = GetComponent<Animator> ();
+			audioSource = GetComponent<AudioSource> ();
 		}
 
 		public void Start ()
@@ -29,6 +33,7 @@ namespace Controllers
 			{
 				ReloadPortals ();
 				animator.SetTrigger("Pressed");
+				audioSource.PlayOneShot(portalsChanging);
 			}
 		}
 

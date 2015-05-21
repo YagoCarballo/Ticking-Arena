@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: ArenasSprites.png (2048 x 2048)
+# $TexturePacker:SmartUpdate:ab7e34c7880572aeeecff730e999bbab:c36e12817bde2f8b58ee6790c1fa9582:9171d171520fc003f2473eac08acaae2$
+#
+
+BouncyCastleArena-Selected;2;1666;770;380;0.5;0.5
+BouncyCastleArena;774;1666;770;380;0.5;0.5
+NeverEndingArena-Selected;2;1284;770;380;0.5;0.5
+NeverEndingArena;774;1284;770;380;0.5;0.5
+PortalsArena-Selected;2;902;770;380;0.5;0.5
+PortalsArena;774;902;770;380;0.5;0.5

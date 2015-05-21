@@ -82,5 +82,7 @@ namespace Game
 			set { activePlayers = value; }
 		}
 
+		public string LastPlayedArena { get; set; }
+
 	}
 }

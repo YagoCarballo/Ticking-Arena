@@ -60,6 +60,7 @@ GameObject:
   - 95: {fileID: 9559934}
   - 60: {fileID: 6008240}
   - 114: {fileID: 11423708}
+  - 82: {fileID: 8218812}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -238,6 +239,76 @@ PolygonCollider2D:
       - {x: .587785184, y: -.809017062}
       - {x: -.587785363, y: -.809016943}
       - {x: -.95105648, y: .309017122}
+--- !u!82 &8218812
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134648}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24325540, guid: 3813550dbc0534f48b00e75c3a2ea79f,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: d35785bdd077a465c9e1a2626d80ed68, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9559934
 Animator:
   serializedVersion: 3
@@ -273,9 +344,15 @@ MonoBehaviour:
     _colour: 3
     _gender: 1
   MaxSpeedX: 5
+  FreezePlayer: 0
   MaxJumps: 2
   MaxSpeedY: 10
   gravityLevel: 0
+  selectorMode: 0
+  endBattleMode: 0
+  boomerangThrow: {fileID: 8300000, guid: 71f45d60d58404af29289df57cbea335, type: 3}
+  genderChange: {fileID: 8300000, guid: 9602d07cc0ecf4e8086457f2f8b9ba21, type: 3}
+  boomeranHit: {fileID: 8300000, guid: d35785bdd077a465c9e1a2626d80ed68, type: 3}
 --- !u!212 &21204312
 SpriteRenderer:
   m_ObjectHideFlags: 1

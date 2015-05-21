@@ -7,6 +7,7 @@ using Game;
 namespace Controllers
 {
 	[RequireComponent(typeof(Animator))]
+	[RequireComponent(typeof(AudioSource))]
 	[RequireComponent(typeof(Rigidbody2D))]
 	[RequireComponent(typeof(PolygonCollider2D))]
 
@@ -37,10 +38,17 @@ namespace Controllers
 		// Timer Variables
 		private ActivePlayerObserver timerObserver;
 
+		// Sound effects
+		private AudioSource audioSource;
+		public AudioClip boomerangThrow;
+		public AudioClip genderChange;
+		public AudioClip boomeranHit;
+
 		public void Awake ()
 		{
 			this.spriteParser = new SpriteParser ("Characters/Sprites/Player-Sprite");
 			this.animator = gameObject.GetComponent<Animator> ();
+			this.audioSource = GetComponent<AudioSource> ();
 		}
 
 		public void Start () 
@@ -118,9 +126,11 @@ namespace Controllers
 			if (timerObserver != null && fire)
 			{
 				timerObserver.ThrowTimer(facingRight);
+				this.audioSource.PlayOneShot(boomerangThrow);
 			}
 			else if (selectorMode && fire)
 			{
+				this.audioSource.PlayOneShot(genderChange);
 				if (player.Gender == PlayerGender.Male) player.Gender = PlayerGender.Female;
 				else if (player.Gender == PlayerGender.Female) player.Gender = PlayerGender.Male;
 				this.ReloadSprites();
@@ -129,9 +139,20 @@ namespace Controllers
 			{
 				GameObject.Find("CharacterSelector").BroadcastMessage("StartGame");
 			}
-			else if (endBattleMode && pausing)
+			else if (endBattleMode)
 			{
-				GameObject.Find("EndOfBattle").BroadcastMessage("NextScreen");
+				if (pausing)
+				{
+					GameObject.Find("EndOfBattle").BroadcastMessage("NextScreen", 0, SendMessageOptions.RequireReceiver);
+				}
+				else if (jump)
+				{
+					GameObject.Find("EndOfBattle").BroadcastMessage("NextScreen", 1, SendMessageOptions.RequireReceiver);
+				}
+				else if (fire)
+				{
+					GameObject.Find("EndOfBattle").BroadcastMessage("NextScreen", 2, SendMessageOptions.RequireReceiver);
+				}
 			}
 
 			// If the Player did not exceed the Jumping limit
@@ -260,6 +281,7 @@ namespace Controllers
 		{
 			if (this.player.Id == newPlayer)
 			{
+				this.audioSource.PlayOneShot(boomeranHit);
 				timerObserver = observer;
 			}
 			else

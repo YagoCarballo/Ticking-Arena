@@ -12,6 +12,9 @@ public class EndOfBattleController : MonoBehaviour
 	private GameObject playersObject;
 	private GameObject standsObject;
 
+	private Animator popupAnimator;
+	private bool showingPopup = false;
+
 	public Material RedStandMaterial;
 	public Material GreenStandMaterial;
 	public Material BlueStandMaterial;
@@ -22,6 +25,7 @@ public class EndOfBattleController : MonoBehaviour
 		game = GameManager.Instance;
 		playersObject = GameObject.Find ("Players");
 		standsObject = GameObject.Find ("Stands");
+		popupAnimator = GameObject.Find ("Popup").GetComponent<Animator> ();
 		
 		if (game.ActivePlayers != null && game.ActivePlayers[0] != null)
 		{
@@ -115,8 +119,28 @@ public class EndOfBattleController : MonoBehaviour
 		}
 	}
 
-	void NextScreen ()
+	void NextScreen (int buttonId)
 	{
-		Application.LoadLevel("CharacterSelector");
+		if (!showingPopup && buttonId == 0)
+		{
+			showingPopup = true;
+			popupAnimator.SetTrigger("ShowPopup");
+		}
+		else
+		{
+			if (buttonId == 1)
+			{
+				foreach (Player player in game.ActivePlayers)
+				{
+					player.LastPosition = 0;
+				}
+
+				Application.LoadLevel(game.LastPlayedArena);
+			}
+			else if (buttonId == 2)
+			{
+				Application.LoadLevel("CharacterSelector");
+			}
+		}
 	}
 }
