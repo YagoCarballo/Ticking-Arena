@@ -10,6 +10,8 @@ TextureImporter:
     21300006: NeverEndingArena
     21300008: PortalsArena-Selected
     21300010: PortalsArena
+    21300012: GravityArena-Selected
+    21300014: GravityArena
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -75,11 +77,31 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: NeverEndingArena-Selected
+    - name: GravityArena-Selected
       rect:
         serializedVersion: 2
         x: 2
         y: 1284
+        width: 770
+        height: 380
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GravityArena
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1284
+        width: 770
+        height: 380
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NeverEndingArena-Selected
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 902
         width: 770
         height: 380
       alignment: 0
@@ -89,7 +111,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 774
-        y: 1284
+        y: 902
         width: 770
         height: 380
       alignment: 0
@@ -99,7 +121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 902
+        y: 520
         width: 770
         height: 380
       alignment: 0
@@ -108,8 +130,8 @@ TextureImporter:
     - name: PortalsArena
       rect:
         serializedVersion: 2
-        x: 774
-        y: 902
+        x: 2
+        y: 138
         width: 770
         height: 380
       alignment: 0

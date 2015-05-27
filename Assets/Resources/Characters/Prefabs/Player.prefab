@@ -347,7 +347,7 @@ MonoBehaviour:
   FreezePlayer: 0
   MaxJumps: 2
   MaxSpeedY: 10
-  gravityLevel: 0
+  gravityLevel: -9.80000019
   selectorMode: 0
   endBattleMode: 0
   boomerangThrow: {fileID: 8300000, guid: 71f45d60d58404af29289df57cbea335, type: 3}

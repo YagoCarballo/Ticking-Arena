@@ -5,12 +5,14 @@
 # http://www.codeandweb.com/texturepacker/unity
 #
 # Sprite sheet: ArenasSprites.png (2048 x 2048)
-# $TexturePacker:SmartUpdate:ab7e34c7880572aeeecff730e999bbab:c36e12817bde2f8b58ee6790c1fa9582:9171d171520fc003f2473eac08acaae2$
+# $TexturePacker:SmartUpdate:e0e3dc6d79f411559cf51c3047fc965d:3e06e2e6a47eed1d1e43deffb9e1c5cb:9171d171520fc003f2473eac08acaae2$
 #
 
 BouncyCastleArena-Selected;2;1666;770;380;0.5;0.5
 BouncyCastleArena;774;1666;770;380;0.5;0.5
-NeverEndingArena-Selected;2;1284;770;380;0.5;0.5
-NeverEndingArena;774;1284;770;380;0.5;0.5
-PortalsArena-Selected;2;902;770;380;0.5;0.5
-PortalsArena;774;902;770;380;0.5;0.5
+GravityArena-Selected;2;1284;770;380;0.5;0.5
+GravityArena;774;1284;770;380;0.5;0.5
+NeverEndingArena-Selected;2;902;770;380;0.5;0.5
+NeverEndingArena;774;902;770;380;0.5;0.5
+PortalsArena-Selected;2;520;770;380;0.5;0.5
+PortalsArena;2;138;770;380;0.5;0.5

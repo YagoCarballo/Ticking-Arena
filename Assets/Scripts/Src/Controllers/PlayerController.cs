@@ -30,8 +30,7 @@ namespace Controllers
 		private	int		jumpCount;
 
 		// World Variables
-		[Range(-100.0f, 100.0f)]
-		public float gravityLevel = 0.0f;
+		public bool inverted = false;
 		public bool selectorMode = false;
 		public bool endBattleMode = false;
 
@@ -79,11 +78,18 @@ namespace Controllers
 			ReloadSprites ();
 		}
 
-
 		public void Update ()
 		{
-			// Sets the Gravity level on the Y axis, (so the Jumps are more realistic and fast)
-			Physics.gravity = Vector3.up * gravityLevel;
+			if (Physics2D.gravity.y > 0)
+			{
+				inverted = true;
+				transform.localScale = new Vector3(transform.localScale.x, -1.0f, transform.localScale.z);
+			}
+			else
+			{
+				inverted = false;
+				transform.localScale = new Vector3(transform.localScale.x, 1.0f, transform.localScale.z);
+			}
 		}
 
 		public void OnEnable ()
@@ -167,7 +173,7 @@ namespace Controllers
 				// If the Player just jumped (not moved) set the Vertical force
 				if(jump)
 				{
-					forceY = MaxSpeedY;
+					forceY = ( inverted ? -MaxSpeedY : MaxSpeedY );
 					jumpCount++;
 					animator.SetTrigger("Jump");
 				}
@@ -220,7 +226,7 @@ namespace Controllers
 
 		#endregion
 
-		private void Flip()
+		public void Flip()
 		{
 			// Flip the Character
 			facingRight = !facingRight;

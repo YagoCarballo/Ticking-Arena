@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/ArenaSelector.unity
   - enabled: 1
     path: Assets/Scenes/NeverEndingArena.unity
+  - enabled: 1
+    path: Assets/Scenes/GravityArena.unity

@@ -13,6 +13,7 @@ namespace controllers
 
 		[UnityEngine.SerializeField]
 		public Timer timer;
+		public bool pauseTimer = false; // Debug
 
 		// Follower
 		public GameObject player;
@@ -22,7 +23,8 @@ namespace controllers
 		public bool ready = true;
 		public bool goingBack = false;
 		public float MovingSpeed = 300.0f;
-		
+
+		private bool inverted = false;
 		private bool moving;
 		private Vector3 destination;
 		private Quaternion	lookAtRotation;
@@ -55,6 +57,13 @@ namespace controllers
 
 		public void Update ()
 		{
+			if (pauseTimer)
+			{
+				return;
+			}
+
+			inverted = (Physics2D.gravity.y > 0);
+
 			// Handles the timer
 			timer.CurrentTime = (Time.time - timer.StartTime);
 			float progress = timer.CheckStatus ();
@@ -125,7 +134,7 @@ namespace controllers
 			{
 				transform.position = new Vector3(
 					player.transform.position.x,
-					player.transform.position.y + 0.55f,
+					player.transform.position.y + (inverted ? -0.55f : 0.55f),
 					player.transform.position.z - 1.0f
 					);
 			}

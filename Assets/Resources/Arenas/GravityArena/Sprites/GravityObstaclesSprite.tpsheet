@@ -1,0 +1,13 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: GravityObstaclesSprite.png (1024 x 512)
+# $TexturePacker:SmartUpdate:56bd44ff7b82541f47e6b05b0551d319:35ad373d894fb6fb775c795137e347f6:45d16fabf261ee4a28e6635f9fbd257f$
+#
+
+GravityStand;2;416;965;94;0.5;0.5
+MiddleStarBlue;2;40;192;182;0.5;0.478021978021978
+MiddleStarYellow;2;224;190;190;0.5105263157894737;0.5105263157894737

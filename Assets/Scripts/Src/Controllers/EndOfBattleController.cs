@@ -126,21 +126,31 @@ public class EndOfBattleController : MonoBehaviour
 			showingPopup = true;
 			popupAnimator.SetTrigger("ShowPopup");
 		}
-		else
+		else if (showingPopup)
 		{
 			if (buttonId == 1)
 			{
-				foreach (Player player in game.ActivePlayers)
-				{
-					player.LastPosition = 0;
-				}
-
-				Application.LoadLevel(game.LastPlayedArena);
+				PlayAgain ();
 			}
 			else if (buttonId == 2)
 			{
-				Application.LoadLevel("CharacterSelector");
+				MainMenu ();
 			}
 		}
+	}
+
+	void PlayAgain ()
+	{
+		foreach (Player player in game.ActivePlayers)
+		{
+			player.LastPosition = 0;
+		}
+		
+		Application.LoadLevel(game.LastPlayedArena);
+	}
+
+	void MainMenu ()
+	{
+		Application.LoadLevel("CharacterSelector");
 	}
 }

@@ -4,6 +4,11 @@ using Game;
 
 public class ArenaSelectorController : MonoBehaviour
 {
+	void Start ()
+	{
+		GameManager.Instance.UpdateCameraSize (Camera.main);
+	}
+
 	public void LoadPortalsArena ()
 	{
 		GameManager.Instance.LastPlayedArena = "PortalsArena";
@@ -19,6 +24,12 @@ public class ArenaSelectorController : MonoBehaviour
 	public void LoadNeverEndingArena ()
 	{
 		GameManager.Instance.LastPlayedArena = "NeverEndingArena";
+		Application.LoadLevel (GameManager.Instance.LastPlayedArena);
+	}
+
+	public void LoadGravityArena ()
+	{
+		GameManager.Instance.LastPlayedArena = "GravityArena";
 		Application.LoadLevel (GameManager.Instance.LastPlayedArena);
 	}
 }
