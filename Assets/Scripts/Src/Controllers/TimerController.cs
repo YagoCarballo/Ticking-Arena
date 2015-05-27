@@ -159,12 +159,12 @@ namespace controllers
 				{
 					ready = true;
 					goingBack = false;
-					player = playersObject.GetChild(playerController.player.Id).gameObject;
+					player = collider.gameObject;
 
 					// Updates GUI
 					progressBar.progress = 1.0f;
 					progressBar.timeLeft = (int) timer.TimeToWait;
-					progressBar.color = player.GetComponent<PlayerController> ().player.Colour;
+					progressBar.color = playerController.player.Colour;
 
 					timer.CurrentPlayer = playerController.player.Id;
 					timer.StartTime = Time.time;
