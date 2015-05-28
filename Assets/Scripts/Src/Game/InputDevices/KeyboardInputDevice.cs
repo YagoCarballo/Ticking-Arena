@@ -24,7 +24,8 @@ namespace Game.InputDevices
 	{
 		private KeyboardPlayerMapping[] keyboardMappings = {
 			new KeyboardPlayerMapping(KeyCode.A, KeyCode.D, KeyCode.W, KeyCode.S, KeyCode.Space),
-			new KeyboardPlayerMapping(KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.Space),
+			new KeyboardPlayerMapping(KeyCode.G, KeyCode.H, KeyCode.T, KeyCode.Y, KeyCode.Space),
+//			new KeyboardPlayerMapping(KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.Space),
 			new KeyboardPlayerMapping(KeyCode.J, KeyCode.L, KeyCode.I, KeyCode.K, KeyCode.Space),
 			new KeyboardPlayerMapping(KeyCode.C, KeyCode.B, KeyCode.F, KeyCode.V, KeyCode.Space)
 		};
