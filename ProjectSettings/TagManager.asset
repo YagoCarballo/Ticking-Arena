@@ -9,6 +9,8 @@ TagManager:
   - timer
   - progress-bar
   - stand
+  - ouya-button
+  - keyboard-button
   layers:
   - Default
   - TransparentFX

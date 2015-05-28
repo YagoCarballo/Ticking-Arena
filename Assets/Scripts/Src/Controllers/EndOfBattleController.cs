@@ -86,6 +86,7 @@ public class EndOfBattleController : MonoBehaviour
 
 	void Start ()
 	{
+		ShowProperKeys ();
 		game.UpdateCameraSize (Camera.main);
 
 		int amountOfPlayers = arena.getAllPlayers ().Count;
@@ -152,5 +153,25 @@ public class EndOfBattleController : MonoBehaviour
 	void MainMenu ()
 	{
 		Application.LoadLevel("CharacterSelector");
+	}
+
+	private void ShowProperKeys ()
+	{
+		int ouyaControllers = OuyaInputDevice.GetConnectedControllers ().Length;
+		Debug.Log (ouyaControllers);
+		if (ouyaControllers != 0)
+		{
+			foreach (GameObject button in GameObject.FindGameObjectsWithTag("keyboard-button"))
+			{
+				button.SetActive(false);
+			}
+		}
+		else
+		{
+			foreach (GameObject button in GameObject.FindGameObjectsWithTag("ouya-button"))
+			{
+				button.SetActive(false);
+			}
+		}
 	}
 }

@@ -5,6 +5,7 @@ using Game;
 using Controllers;
 using controllers;
 using Observers;
+using Game.InputDevices;
 
 public class ArenaController : MonoBehaviour, TimerObserver
 {
@@ -94,12 +95,33 @@ public class ArenaController : MonoBehaviour, TimerObserver
 
 	void Start ()
 	{
+		ShowProperKeys ();
 		game.UpdateCameraSize (Camera.main);
 	}
 
 	void Update ()
 	{
 
+	}
+
+	private void ShowProperKeys ()
+	{
+		int ouyaControllers = OuyaInputDevice.GetConnectedControllers ().Length;
+		Debug.Log (ouyaControllers);
+		if (ouyaControllers != 0)
+		{
+			foreach (GameObject button in GameObject.FindGameObjectsWithTag("keyboard-button"))
+			{
+				button.SetActive(false);
+			}
+		}
+		else
+		{
+			foreach (GameObject button in GameObject.FindGameObjectsWithTag("ouya-button"))
+			{
+				button.SetActive(false);
+			}
+		}
 	}
 
 	#region TimerObserver implementation

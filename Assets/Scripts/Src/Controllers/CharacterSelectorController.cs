@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Entities;
 using Game;
 using Controllers;
+using Game.InputDevices;
 
 public class CharacterSelectorController : MonoBehaviour
 {
@@ -27,8 +28,29 @@ public class CharacterSelectorController : MonoBehaviour
 		#endif
 
 		LoadPlayers ();
+		ShowProperKeys ();
 		game.UpdateCameraSize (Camera.main);
 		yield return true;
+	}
+
+	private void ShowProperKeys ()
+	{
+		int ouyaControllers = OuyaInputDevice.GetConnectedControllers ().Length;
+		Debug.Log (ouyaControllers);
+		if (ouyaControllers != 0)
+		{
+			foreach (GameObject button in GameObject.FindGameObjectsWithTag("keyboard-button"))
+			{
+				button.SetActive(false);
+			}
+		}
+		else
+		{
+			foreach (GameObject button in GameObject.FindGameObjectsWithTag("ouya-button"))
+			{
+				button.SetActive(false);
+			}
+		}
 	}
 
 	private void LoadPlayers ()
