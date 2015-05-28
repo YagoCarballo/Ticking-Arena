@@ -38,7 +38,7 @@ public class ArenaSelectorController : MonoBehaviour
 	private void ShowProperKeys ()
 	{
 		int ouyaControllers = OuyaInputDevice.GetConnectedControllers ().Length;
-		Debug.Log (ouyaControllers);
+
 		if (ouyaControllers != 0)
 		{
 			foreach (GameObject button in GameObject.FindGameObjectsWithTag("keyboard-button"))

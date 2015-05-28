@@ -32,7 +32,7 @@ public class EndOfBattleController : MonoBehaviour
 			foreach (Player player in game.ActivePlayers) {
 				GameObject prefab = (GameObject)Instantiate (Resources.Load ("Characters/Prefabs/Player"));
 				prefab.name = player.Name;
-				prefab.transform.localPosition = new Vector2(( player.Id * 3 ) - 4.5f, -2);
+				prefab.transform.localPosition = new Vector2(( player.PlayingPosition * 3 ) - 4.5f, -2);
 
 				prefab.GetComponent<PlayerController> ().player = player;
 				prefab.GetComponent<PlayerController> ().endBattleMode = true;
@@ -158,7 +158,6 @@ public class EndOfBattleController : MonoBehaviour
 	private void ShowProperKeys ()
 	{
 		int ouyaControllers = OuyaInputDevice.GetConnectedControllers ().Length;
-		Debug.Log (ouyaControllers);
 		if (ouyaControllers != 0)
 		{
 			foreach (GameObject button in GameObject.FindGameObjectsWithTag("keyboard-button"))

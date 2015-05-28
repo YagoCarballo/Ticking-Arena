@@ -45,7 +45,7 @@ namespace controllers
 		public void Start ()
 		{
 			timer.CurrentPlayer = SelectRandomPlayerInField ();
-			player = playersObject.GetChild(timer.CurrentPlayer).gameObject;
+			player = playersObject.FindChild("Player_"+timer.CurrentPlayer).gameObject;
 
 			// Updates GUI
 			progressBar.progress = 1.0f;
@@ -155,7 +155,7 @@ namespace controllers
 			if (collider.gameObject.tag.Equals("Player"))
 			{
 				PlayerController playerController = collider.gameObject.GetComponent<PlayerController> ();
-				if (playerController.player.Id != timer.CurrentPlayer)
+				if (playerController.player.PlayingPosition != timer.CurrentPlayer)
 				{
 					ready = true;
 					goingBack = false;
@@ -166,7 +166,7 @@ namespace controllers
 					progressBar.timeLeft = (int) timer.TimeToWait;
 					progressBar.color = playerController.player.Colour;
 
-					timer.CurrentPlayer = playerController.player.Id;
+					timer.CurrentPlayer = playerController.player.PlayingPosition;
 					timer.StartTime = Time.time;
 				}
 			}
@@ -215,7 +215,7 @@ namespace controllers
 
 			int randomPos = Random.Range (0, (playersOnField.Count - 1));
 
-			return playersOnField[randomPos].Id;
+			return playersOnField[randomPos].PlayingPosition;
 		}
 	}
 }

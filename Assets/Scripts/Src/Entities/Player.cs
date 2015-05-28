@@ -30,6 +30,7 @@ namespace Entities
 		private float timeLeft;
 		private float totalTime;
 		private int lastPosition = 0;
+		private int playingPosition = -1;
 
 		public readonly static Vector2[] FemaleCollisionPoints = {
 			new Vector2(-0.1301057f,	0.1653351f),
@@ -160,6 +161,12 @@ namespace Entities
 		{
 			get { return this.lastPosition; }
 			set { this.lastPosition = value; }
+		}
+
+		public int PlayingPosition
+		{
+			get { return this.playingPosition; }
+			set { this.playingPosition = value; }
 		}
 	}
 }

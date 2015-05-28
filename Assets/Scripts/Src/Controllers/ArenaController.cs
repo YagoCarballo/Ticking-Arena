@@ -31,7 +31,7 @@ public class ArenaController : MonoBehaviour, TimerObserver
 			foreach (Player player in game.ActivePlayers) {
 				GameObject prefab = (GameObject)Instantiate (Resources.Load ("Characters/Prefabs/Player"));
 				prefab.name = player.Name;
-				prefab.transform.localPosition = new Vector2 ((player.Id * -1) + 1.5f, -2);
+				prefab.transform.localPosition = new Vector2 ((player.PlayingPosition * -1) + 1.5f, -2);
 			
 				prefab.GetComponent<PlayerController> ().player = player;
 			
@@ -107,7 +107,6 @@ public class ArenaController : MonoBehaviour, TimerObserver
 	private void ShowProperKeys ()
 	{
 		int ouyaControllers = OuyaInputDevice.GetConnectedControllers ().Length;
-		Debug.Log (ouyaControllers);
 		if (ouyaControllers != 0)
 		{
 			foreach (GameObject button in GameObject.FindGameObjectsWithTag("keyboard-button"))
@@ -143,7 +142,7 @@ public class ArenaController : MonoBehaviour, TimerObserver
 				if (player.LastPosition == 0)
 				{
 					player.LastPosition = positions;
-					game.ActivePlayers [player.Id] = player;
+					game.ActivePlayers [player.PlayingPosition] = player;
 					Application.LoadLevel("EndOfBattleMenu");
 					return;
 				}

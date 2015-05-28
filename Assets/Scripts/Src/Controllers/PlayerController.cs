@@ -271,13 +271,7 @@ namespace Controllers
 			}
 		}
 
-		public void timerEnded(float time, int player)
-		{
-			if (this.player.Id == player)
-			{
-				Debug.Log("Game Over: " + this.player.Name + " Looses..");
-			}
-		}
+		public void timerEnded(float time, int player) {}
 		
 		public void timerStarted(float time, int player)
 		{
@@ -285,7 +279,7 @@ namespace Controllers
 		
 		public void timerChangedOwner(int newPlayer, int oldPlayer, ActivePlayerObserver observer)
 		{
-			if (this.player.Id == newPlayer)
+			if (this.player.PlayingPosition == newPlayer)
 			{
 				this.audioSource.PlayOneShot(boomeranHit);
 				timerObserver = observer;

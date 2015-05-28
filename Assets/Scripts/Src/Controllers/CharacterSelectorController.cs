@@ -36,7 +36,7 @@ public class CharacterSelectorController : MonoBehaviour
 	private void ShowProperKeys ()
 	{
 		int ouyaControllers = OuyaInputDevice.GetConnectedControllers ().Length;
-		Debug.Log (ouyaControllers);
+
 		if (ouyaControllers != 0)
 		{
 			foreach (GameObject button in GameObject.FindGameObjectsWithTag("keyboard-button"))
@@ -96,13 +96,16 @@ public class CharacterSelectorController : MonoBehaviour
 	
 	public void StartGame ()
 	{
+		int pos = 0;
 		List<Player> players = new List<Player> (4);
 
 		foreach (Player player in arena.getAllPlayers())
 		{
 			if (player.Colour != PlayerColour.Gray)
 			{
+				player.PlayingPosition = pos;
 				players.Add(player);
+				pos++;
 			}
 		}
 
