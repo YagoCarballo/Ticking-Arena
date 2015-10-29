@@ -1,6 +1,6 @@
 ### Demo
-[Play Now!!](http://yagocarballo.me/TickingArena)
-[Promo Video](https://www.youtube.com/watch?v=fTmYdQFSmYE)
+- [Play Now!!](http://yagocarballo.me/TickingArena)
+- [Promo Video](https://www.youtube.com/watch?v=fTmYdQFSmYE)
 
 ### Title:
 Ticking Arena
