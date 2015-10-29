@@ -45,7 +45,7 @@ namespace controllers
 		public void Start ()
 		{
 			timer.CurrentPlayer = SelectRandomPlayerInField ();
-			player = playersObject.FindChild("Player_"+timer.CurrentPlayer).gameObject;
+			player = playersObject.transform.GetChild(timer.CurrentPlayer).gameObject;
 
 			// Updates GUI
 			progressBar.progress = 1.0f;
